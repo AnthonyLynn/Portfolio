@@ -7,7 +7,7 @@ import { Footer } from "./Footer";
 
 export const App = ({}) => {
   return (
-    <main className="bg-dark-primary-background min-h-screen">
+    <main className="bg-dark-primary-background min-h-screen flex flex-col gap-[20px]">
       <Header />
       <About />
       <ExperienceSection />

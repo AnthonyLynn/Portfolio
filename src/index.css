@@ -1,7 +1,13 @@
+@import "./vendor/normalize.css";
+@import "./vendor/fonts.css";
 @import "tailwindcss";
 
 @theme {
   --color-dark-primary-background: #111422;
   --color-dark-secondary-background: #0d0d12;
   --color-dark-primary-text: #ffffff;
+}
+
+.font-roboto {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
 }
