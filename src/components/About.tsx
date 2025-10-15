@@ -11,30 +11,41 @@ interface AboutProps {}
 
 export const About: React.FC<AboutProps> = ({}) => {
   return (
-    <section className="flex pb-[40px] pt-[82px] justify-center gap-[40px] text-dark-primary-text font-roboto">
-      <div className="flex flex-col gap-[40px]">
-        <div className="flex flex-col gap-[5px]">
+    <section className="flex py-12 justify-center gap-10 text-dark-primary-text font-roboto">
+      <div className="flex flex-col justify-between">
+        <div className="flex flex-col gap-1">
           <div>
-            <h1 className="font-bold text-[36px] m-[0px] leading-[42px]">
-              Anthony Lynn
-            </h1>
-            <p className="font-bold text-[20px] leading-[23px]">
+            <h1 className="font-bold text-4xl">Anthony Lynn</h1>
+            <p className="font-bold text-lg">
               Software Engineer | Game Developer
             </p>
           </div>
-          <div className="flex gap-[5px]">
+          <a
+            href="https://maps.app.goo.gl/Shrt4vb5u3qmSd7X9"
+            target="_blank"
+            className="flex gap-1 items-center"
+          >
             <img src={LocationIcon} alt="Location Icon" />
-            <p className="text-dark-secondary-text font-regular text-[14px] leading-[16px]">
+            <p className="text-dark-secondary-text font-regular text-sm">
               USA, Virginia
             </p>
-          </div>
+          </a>
         </div>
-        <div className="flex items-center gap-[10px]">
-          <button className="flex border border-dark-tertiary-background px-[10px] py-[5px] rounded-[5px] gap-[10px] text-[12px] font-medium">
-            <p>Resume</p>
-            <img src={FileDownloadIcon} alt="File Download Icon" />
-          </button>
-          <a href="">
+        <div className="flex items-center gap-3">
+          <a
+            href=""
+            download="AnthonyLynnResume"
+            className="flex border border-dark-tertiary-background px-2 py-1 rounded-sm
+           gap-2"
+          >
+            <p className="text-xs font-normal leading-none">Resume</p>
+            <img
+              src={FileDownloadIcon}
+              alt="File Download Icon"
+              className="h-[12px]"
+            />
+          </a>
+          <a href="https://www.linkedin.com/in/anthony-w-lynn" target="_blank">
             <img src={LinkedInIcon} alt="LinkedIn Icon" />
           </a>
           <a href="">
@@ -45,11 +56,7 @@ export const About: React.FC<AboutProps> = ({}) => {
           </a>
         </div>
       </div>
-      <img
-        src={ProfilePicture}
-        alt="Profile Picture"
-        className="rounded-[8px]"
-      />
+      <img src={ProfilePicture} alt="Profile Picture" className="rounded-md" />
     </section>
   );
 };

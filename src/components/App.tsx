@@ -7,12 +7,14 @@ import { Footer } from "./Footer";
 
 export const App = ({}) => {
   return (
-    <main className="bg-dark-primary-background min-h-screen flex flex-col gap-[20px]">
+    <main className="relative -z-100 bg-dark-primary-background min-h-screen flex flex-col gap-[20px] items-center">
       <Header />
-      <About />
-      <ExperienceSection />
-      <SkillSection />
-      <ProjectSection />
+      <div className="w-[640px] pt-[42px]">
+        <About />
+        <ExperienceSection />
+        <SkillSection />
+        <ProjectSection />
+      </div>
       <Footer />
     </main>
   );
