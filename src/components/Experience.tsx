@@ -26,16 +26,14 @@ export const Experience: React.FC<ExperienceProps> = ({
       <img
         src={institutionLogo}
         alt="Institution Logo"
-        className="aspect-square rounded-full w-[48px]"
+        className="aspect-square rounded-full w-12 border border-dark-tertiary-background stroke-out box-content"
       />
       <div className="flex flex-col gap-2 items-start">
         <div className="flex flex-col items-start">
           <p className="text-xs text-dark-secondary-text font-light">
             {beginDate} - {endDate}
           </p>
-          <h3 className="text-base text-dark-primary-text font-bold">
-            {companyName}
-          </h3>
+          <h3 className="text-base font-bold">{companyName}</h3>
           <p className="text-sm text-dark-secondary-text font-normal">
             {roleTitle}
           </p>

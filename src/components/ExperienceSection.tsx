@@ -8,13 +8,13 @@ interface ExperienceSectionProps {}
 
 export const ExperienceSection: React.FC<ExperienceSectionProps> = ({}) => {
   return (
-    <section className="flex flex-col gap-2 font-roboto text-dark-primary-text text-base font-regular">
-      <button className="flex relative -z-20 w-full bg-dark-tertiary-background rounded-md p-1 items-center leading-[24px]">
+    <section className="flex flex-col gap-2 text-base font-normal">
+      <button className="flex relative z-10 w-full bg-dark-tertiary-background rounded-md p-1 items-center leading-[24px]">
         <div className="absolute -z-10 w-[calc(50%-4px)] h-[calc(100%-8px)] rounded-sm bg-dark-primary-background"></div>
         <p className="w-[50%]">Work</p>
         <p className="w-[50%] text-dark-secondary-text">Education</p>
       </button>
-      <div className="relative border border-dark-tertiary-background rounded-md p-4 flex overflow-hidden">
+      <div className="relative z-10 border border-dark-tertiary-background rounded-md p-4 flex overflow-hidden">
         <div className="w-full shrink-0 flex flex-col gap-6">
           <Experience
             institutionLogo={AquariumReptileDenCompanyLogo}

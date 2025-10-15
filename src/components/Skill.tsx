@@ -1,16 +1,22 @@
 import React from "react";
 
-interface SkillProps {}
+interface SkillProps {
+  logo: string;
+  name: string;
+  description: string;
+}
 
-export const Skill: React.FC<SkillProps> = ({}) => {
+export const Skill: React.FC<SkillProps> = ({ logo, name, description }) => {
   return (
-    <article>
-      <div>
-        <img src="" alt="" />
+    <article className="flex border border-dark-tertiary-background rounded-md p-1.5 gap-3">
+      <div className="bg-dark-tertiary-background rounded-sm p-1.5">
+        <img src={logo} alt={name} className="h-6 w-6 object-contain" />
       </div>
-      <div>
-        <p></p>
-        <p></p>
+      <div className="flex flex-col justify-between">
+        <p className="font-bold text-sm">{name}</p>
+        <p className="font-light text-xs text-dark-secondary-text">
+          {description}
+        </p>
       </div>
     </article>
   );

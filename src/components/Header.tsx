@@ -7,7 +7,7 @@ interface HeaderProps {}
 
 export const Header: React.FC<HeaderProps> = ({}) => {
   return (
-    <header className="bg-dark-secondary-background h-[42px] absolute w-full">
+    <header className="bg-dark-secondary-background h-[42px] absolute left-0 w-full">
       <div className="h-full max-w-[640px] w-full flex justify-between m-auto">
         <nav className="h-full text-dark-primary-text font-roboto font-bold text-sm flex">
           <a href="" className="flex items-center pr-[20px]">

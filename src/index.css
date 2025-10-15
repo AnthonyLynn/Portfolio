@@ -12,3 +12,15 @@
 .font-roboto {
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }
+
+:root {
+  position: relative;
+  background-color: var(--color-dark-primary-background);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-dark-primary-text);
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}

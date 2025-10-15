@@ -11,7 +11,7 @@ interface AboutProps {}
 
 export const About: React.FC<AboutProps> = ({}) => {
   return (
-    <section className="flex py-12 justify-center gap-10 text-dark-primary-text font-roboto">
+    <section className="flex py-12 justify-center gap-10">
       <div className="flex flex-col justify-between">
         <div className="flex flex-col gap-1">
           <div>
