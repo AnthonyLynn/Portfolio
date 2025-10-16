@@ -1,32 +1,68 @@
 import React from "react";
 
-interface ProjectProps {}
+import GitHubIcon from "../images/GithubIcon.svg";
+import YouTubeIcon from "../images/YouTubeIcon.svg";
+import ExternalLinkIcon from "../images/ExternalLinkIcon.svg";
 
-export const Project: React.FC<ProjectProps> = ({}) => {
+interface ProjectProps {
+  image: string;
+  title: string;
+  description: string;
+  skills: string[];
+  websiteLink: string;
+  demoLink: string;
+  gitHubLink: string;
+}
+
+export const Project: React.FC<ProjectProps> = ({
+  image,
+  title,
+  description,
+  skills,
+  websiteLink,
+  demoLink,
+  gitHubLink,
+}) => {
   return (
     <article>
-      <a href="">
-        <img src="" alt="" />
+      <a
+        href={websiteLink}
+        target="_blank"
+        className="p-1 border border-dark-tertiary-background rounded-md box-border"
+      >
+        <img src={image} alt={title} />
       </a>
-      <div>
-        <h3></h3>
-        <nav>
-          <a href="">
-            <img src="" alt="" />
+      <div className="flex justify-between">
+        <h3 className="font-bold text-base">{title}</h3>
+        <nav className="flex gap-2 items-center">
+          <a href={websiteLink} target="_blank">
+            <img
+              src={ExternalLinkIcon}
+              alt="External Link Icon"
+              className="h-3 aspect-square text-white"
+            />
           </a>
-          <a href="">
-            <img src="" alt="" />
+          <a href={demoLink} target="_blank">
+            <img
+              src={YouTubeIcon}
+              alt="YouTube Icon"
+              className="h-3 aspect-square stroke-white"
+            />
           </a>
-          <a href="">
-            <img src="" alt="" />
+          <a href={gitHubLink} target="_blank" className="fill-white">
+            <img
+              src={GitHubIcon}
+              alt="GitHub Icon"
+              className="h-3 aspect-square stroke-white fill-none"
+            />
           </a>
         </nav>
       </div>
-      <p></p>
-      <div>
-        <div>React.js</div>
-        <div>JavaScript</div>
-        <div>News API</div>
+      <p>{description}</p>
+      <div className="flex">
+        {skills.map((skill) => {
+          return <div>{skill}</div>;
+        })}
       </div>
     </article>
   );

@@ -26,19 +26,17 @@ export const About: React.FC<AboutProps> = ({}) => {
             className="flex gap-1 items-center"
           >
             <img src={LocationIcon} alt="Location Icon" />
-            <p className="text-dark-secondary-text font-regular text-sm">
-              USA, Virginia
-            </p>
+            <p className="text-text-secondary text-sm">USA, Virginia</p>
           </a>
         </div>
         <div className="flex items-center gap-3">
           <a
             href=""
             download="AnthonyLynnResume"
-            className="flex border border-dark-tertiary-background px-2 py-1 rounded-sm
+            className="flex border border-text-secondary px-2 py-1 rounded-sm
            gap-2"
           >
-            <p className="text-xs font-normal leading-none">Resume</p>
+            <p className="text-xs leading-none">Resume</p>
             <img
               src={FileDownloadIcon}
               alt="File Download Icon"

@@ -8,13 +8,13 @@ interface ExperienceSectionProps {}
 
 export const ExperienceSection: React.FC<ExperienceSectionProps> = ({}) => {
   return (
-    <section className="flex flex-col gap-2 text-base font-normal">
-      <button className="flex relative z-10 w-full bg-dark-tertiary-background rounded-md p-1 items-center leading-[24px]">
-        <div className="absolute -z-10 w-[calc(50%-4px)] h-[calc(100%-8px)] rounded-sm bg-dark-primary-background"></div>
+    <section className="flex flex-col gap-2 text-base">
+      <button className="flex relative z-10 w-full bg-base-tertiary rounded-md p-1 items-center leading-[24px]">
+        <div className="absolute -z-10 w-[calc(50%-4px)] h-[calc(100%-8px)] rounded-sm bg-base-secondary"></div>
         <p className="w-[50%]">Work</p>
-        <p className="w-[50%] text-dark-secondary-text">Education</p>
+        <p className="w-[50%] text-text-secondary">Education</p>
       </button>
-      <div className="relative z-10 border border-dark-tertiary-background rounded-md p-4 flex overflow-hidden">
+      <div className="relative z-10 border border-base-tertiary rounded-md p-4 flex overflow-hidden">
         <div className="w-full shrink-0 flex flex-col gap-6">
           <Experience
             institutionLogo={AquariumReptileDenCompanyLogo}
@@ -46,10 +46,10 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({}) => {
             ]}
             externalLinks={[]}
           />
-          <div className="absolute -z-10 h-full w-px bg-dark-tertiary-background left-10 top-0"></div>
+          <div className="absolute -z-10 h-full w-px bg-base-tertiary left-10 top-0"></div>
         </div>
         <div className="w-full shrink-0">
-          <div className="absolute -z-10 h-full w-px bg-dark-tertiary-background left-10 top-0"></div>
+          <div className="absolute -z-10 h-full w-px bg-base-tertiary left-10 top-0"></div>
         </div>
       </div>
     </section>

@@ -26,17 +26,15 @@ export const Experience: React.FC<ExperienceProps> = ({
       <img
         src={institutionLogo}
         alt="Institution Logo"
-        className="aspect-square rounded-full w-12 border border-dark-tertiary-background stroke-out box-content"
+        className="aspect-square rounded-full w-12 border border-base-tertiary stroke-out box-content"
       />
       <div className="flex flex-col gap-2 items-start">
         <div className="flex flex-col items-start">
-          <p className="text-xs text-dark-secondary-text font-light">
+          <p className="text-xs text-text-secondary font-light">
             {beginDate} - {endDate}
           </p>
           <h3 className="text-base font-bold">{companyName}</h3>
-          <p className="text-sm text-dark-secondary-text font-normal">
-            {roleTitle}
-          </p>
+          <p className="text-sm text-text-secondary">{roleTitle}</p>
           <ul className="list-['•_'] list-inside flex flex-col items-start">
             {descriptions.map((description) => {
               return <li className="font-normal text-sm">{description}</li>;
@@ -47,14 +45,14 @@ export const Experience: React.FC<ExperienceProps> = ({
           return (
             <a
               href={externalLink.link}
-              className="flex px-2 py-1 bg-white rounded-sm items-center gap-2"
+              className="flex px-2 py-1 bg-text-primary rounded-sm items-center gap-2"
             >
               <img
                 src={ExternalLinkIcon}
                 alt="External Link Icon"
                 className="fill-black"
               />
-              <p className="text-black text-xs font-medium">
+              <p className="text-text-tertiary text-xs font-medium">
                 {externalLink.name}
               </p>
             </a>

@@ -1,13 +1,7 @@
 @import "./vendor/fonts.css";
 @import "tailwindcss";
 
-@theme {
-  --color-dark-primary-background: #111422;
-  --color-dark-secondary-background: #0d0d12;
-  --color-dark-tertiary-background: #2d334b;
-  --color-dark-primary-text: #ffffff;
-  --color-dark-secondary-text: #adadad;
-}
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 .font-roboto {
   font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -15,12 +9,43 @@
 
 :root {
   position: relative;
-  background-color: var(--color-dark-primary-background);
+  background-color: var(--color-base-secondary);
   min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: var(--color-dark-primary-text);
+  color: var(--color-text-primary);
   font-family: Roboto, Arial, Helvetica, sans-serif;
+
+  --color-base-primary-color: #ededed;
+  --color-base-secondary-color: #f6f6f6;
+  --color-base-tertiary-color: #e4e4e4;
+  --color-text-primary-color: #383838;
+  --color-text-secondary-color: #818181;
+  --color-text-tertiary-color: #ffffff;
+}
+
+[data-theme="dark"] {
+  --color-base-primary-color: #0d0d12;
+  --color-base-secondary-color: #111422;
+  --color-base-tertiary-color: #2d334b;
+  --color-text-primary-color: #ffffff;
+  --color-text-secondary-color: #adadad;
+  --color-text-tertiary-color: #000000;
+}
+
+@theme inline {
+  --color-base-primary: var(--color-base-primary-color);
+  --color-base-secondary: var(--color-base-secondary-color);
+  --color-base-tertiary: var(--color-base-tertiary-color);
+  --color-text-primary: var(--color-text-primary-color);
+  --color-text-secondary: var(--color-text-secondary-color);
+  --color-text-tertiary: var(--color-text-tertiary-color);
+}
+
+@theme {
+  --color-link-color: #5ca3ff;
+  --color-purple-accent-color: #cc80ff;
+  --color-orange-accent-color: #ffb682;
 }
