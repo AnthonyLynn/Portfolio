@@ -1,5 +1,5 @@
-import SunIcon from "../images/SunIcon.svg";
-import MoonIcon from "../images/MoonIcon.svg";
+import { SunIcon } from "./Icons/SunIcon";
+import { MoonIcon } from "./Icons/MoonIcon";
 
 import React from "react";
 
@@ -24,8 +24,8 @@ export const Header: React.FC<HeaderProps> = ({}) => {
           </a>
         </nav>
         <button>
-          <img src={SunIcon} alt="LightModeIcon" className="visible" />
-          <img src={MoonIcon} alt="DarkModeIcon" className="hidden" />
+          <SunIcon className="visible fill-orange-accent-color h-4" />
+          <MoonIcon className="hidden stroke-purple-accent-color h-4" />
         </button>
       </div>
     </header>

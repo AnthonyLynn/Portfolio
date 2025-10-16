@@ -1,8 +1,8 @@
 import React from "react";
 
-import GitHubIcon from "../images/GithubIcon.svg";
-import YouTubeIcon from "../images/YouTubeIcon.svg";
-import ExternalLinkIcon from "../images/ExternalLinkIcon.svg";
+import { YouTubeIcon } from "./Icons/YouTubeIcon";
+import { ExternalLinkIcon } from "./Icons/ExternalLinkIcon";
+import { GitHubIcon } from "./Icons/GitHubIcon";
 
 interface ProjectProps {
   image: string;
@@ -24,44 +24,38 @@ export const Project: React.FC<ProjectProps> = ({
   gitHubLink,
 }) => {
   return (
-    <article>
+    <article className="flex flex-col gap-2">
       <a
         href={websiteLink}
         target="_blank"
-        className="p-1 border border-dark-tertiary-background rounded-md box-border"
+        className="p-1 border border-base-tertiary rounded-md box-border"
       >
         <img src={image} alt={title} />
       </a>
-      <div className="flex justify-between">
-        <h3 className="font-bold text-base">{title}</h3>
-        <nav className="flex gap-2 items-center">
-          <a href={websiteLink} target="_blank">
-            <img
-              src={ExternalLinkIcon}
-              alt="External Link Icon"
-              className="h-3 aspect-square text-white"
-            />
-          </a>
-          <a href={demoLink} target="_blank">
-            <img
-              src={YouTubeIcon}
-              alt="YouTube Icon"
-              className="h-3 aspect-square stroke-white"
-            />
-          </a>
-          <a href={gitHubLink} target="_blank" className="fill-white">
-            <img
-              src={GitHubIcon}
-              alt="GitHub Icon"
-              className="h-3 aspect-square stroke-white fill-none"
-            />
-          </a>
-        </nav>
+      <div>
+        <div className="flex justify-between">
+          <h3 className="font-bold text-base">{title}</h3>
+          <nav className="flex gap-2 items-center p-1">
+            <a href={websiteLink} target="_blank">
+              <ExternalLinkIcon className="h-3 stroke-link-color" />
+            </a>
+            <a href={demoLink} target="_blank">
+              <YouTubeIcon className="h-3 stroke-link-color" />
+            </a>
+            <a href={gitHubLink} target="_blank" className="fill-white">
+              <GitHubIcon className="h-3 stroke-link-color" />
+            </a>
+          </nav>
+        </div>
+        <p className="text-xs text-text-secondary">{description}</p>
       </div>
-      <p>{description}</p>
-      <div className="flex">
+      <div className="flex gap-1">
         {skills.map((skill) => {
-          return <div>{skill}</div>;
+          return (
+            <div className="text-xs font-medium py-0.5 px-1.5 rounded-sm bg-base-tertiary">
+              {skill}
+            </div>
+          );
         })}
       </div>
     </article>

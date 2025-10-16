@@ -1,9 +1,9 @@
-import LocationIcon from "../images/LocationIcon.svg";
-import FileDownloadIcon from "../images/FileDownloadIcon.svg";
-import LinkedInIcon from "../images/LinkedInIcon.svg";
-import GithubIcon from "../images/GithubIcon.svg";
-import MailIcon from "../images/MailIcon.svg";
 import ProfilePicture from "../images/ProfilePicture.png";
+import { LocationIcon } from "./Icons/LocationIcon";
+import { FileDownloadIcon } from "./Icons/FileDownloadIcon";
+import { MailIcon } from "./Icons/MailIcon";
+import { LinkedInIcon } from "./Icons/LinkedInIcon";
+import { GitHubIcon } from "./Icons/GitHubIcon";
 
 import React from "react";
 
@@ -25,11 +25,11 @@ export const About: React.FC<AboutProps> = ({}) => {
             target="_blank"
             className="flex gap-1 items-center"
           >
-            <img src={LocationIcon} alt="Location Icon" />
+            <LocationIcon className="stroke-text-secondary h-3" />
             <p className="text-text-secondary text-sm">USA, Virginia</p>
           </a>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex justify-start items-center gap-3">
           <a
             href=""
             download="AnthonyLynnResume"
@@ -37,20 +37,16 @@ export const About: React.FC<AboutProps> = ({}) => {
            gap-2"
           >
             <p className="text-xs leading-none">Resume</p>
-            <img
-              src={FileDownloadIcon}
-              alt="File Download Icon"
-              className="h-[12px]"
-            />
+            <FileDownloadIcon className="h-3 fill-text-primary" />
           </a>
           <a href="https://www.linkedin.com/in/anthony-w-lynn" target="_blank">
-            <img src={LinkedInIcon} alt="LinkedIn Icon" />
+            <LinkedInIcon className="h-3 stroke-text-primary" />
           </a>
-          <a href="">
-            <img src={GithubIcon} alt="Github Icon" />
+          <a href="" target="_blank">
+            <GitHubIcon className="h-3 stroke-text-primary" />
           </a>
-          <a href="">
-            <img src={MailIcon} alt="Mail Icon" />
+          <a href="" target="_blank">
+            <MailIcon className="h-3 stroke-text-primary fill-text-primary" />
           </a>
         </div>
       </div>

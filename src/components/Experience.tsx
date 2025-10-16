@@ -1,4 +1,4 @@
-import ExternalLinkIcon from "../images/ExternalLinkIcon.svg";
+import { ExternalLinkIcon } from "./Icons/ExternalLinkIcon";
 
 import React from "react";
 
@@ -47,11 +47,7 @@ export const Experience: React.FC<ExperienceProps> = ({
               href={externalLink.link}
               className="flex px-2 py-1 bg-text-primary rounded-sm items-center gap-2"
             >
-              <img
-                src={ExternalLinkIcon}
-                alt="External Link Icon"
-                className="fill-black"
-              />
+              <ExternalLinkIcon className="stroke-text-tertiary h-2.5" />
               <p className="text-text-tertiary text-xs font-medium">
                 {externalLink.name}
               </p>
