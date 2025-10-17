@@ -1,21 +1,29 @@
 import React from "react";
 
+import { LinkedInIcon } from "./Icons/LinkedInIcon";
+import { GitHubIcon } from "./Icons/GitHubIcon";
+import { MailIcon } from "./Icons/MailIcon";
+
 interface FooterProps {}
 
 export const Footer: React.FC<FooterProps> = ({}) => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer>
-      <div>
-        <p></p>
-        <nav>
-          <a href="">
-            <img src="" alt="" />
+    <footer className="w-full bg-base-primary flex justify-center">
+      <div className="flex justify-between w-[640px] py-4 items-center">
+        <p className="font-medium text-xs text-text-secondary">
+          &copy; {currentYear} anthonywlynn.com{" "}
+        </p>
+        <nav className="flex gap-4">
+          <a href="https://www.linkedin.com/in/anthony-w-lynn" target="_blank">
+            <LinkedInIcon className="stroke-text-secondary h-3" />
           </a>
-          <a href="">
-            <img src="" alt="" />
+          <a href="https://github.com/AnthonyLynn" target="_blank">
+            <GitHubIcon className="stroke-text-secondary h-3" />
           </a>
-          <a href="">
-            <img src="" alt="" />
+          <a href="mailto:anthonywlynn2002@gmail.com" target="_blank">
+            <MailIcon className="fill-text-secondary stroke-text-secondary h-3" />
           </a>
         </nav>
       </div>

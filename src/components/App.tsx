@@ -7,15 +7,15 @@ import { Footer } from "./Footer";
 
 export const App = ({}) => {
   return (
-    <>
+    <div className="min-h-screen w-full flex flex-col items-center">
       <Header />
-      <main className="w-[640px] pt-[42px] flex flex-col gap-7">
+      <main className="w-[640px] pb-8 flex flex-col gap-7">
         <About />
         <ExperienceSection />
         <SkillSection />
         <ProjectSection />
       </main>
       <Footer />
-    </>
+    </div>
   );
 };

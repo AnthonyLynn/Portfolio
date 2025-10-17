@@ -12,7 +12,7 @@ interface SkillSectionProps {}
 
 export const SkillSection: React.FC<SkillSectionProps> = ({}) => {
   return (
-    <section className="flex flex-col gap-2">
+    <section className="flex flex-col gap-2" id="skills">
       <h2 className="text-xl font-bold">Skills</h2>
       <div className="grid grid-cols-3 gap-1.5">
         <Skill logo={FigmaIcon} name="Figma" description="Design Tool" />

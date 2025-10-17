@@ -7,7 +7,7 @@ interface ProjectSectionProps {}
 
 export const ProjectSection: React.FC<ProjectSectionProps> = ({}) => {
   return (
-    <section className="flex flex-col gap-2">
+    <section className="flex flex-col gap-2" id="projects">
       <h2 className="text-xl font-bold">Projects</h2>
       <div className="grid grid-cols-3 gap-1.5">
         <Project

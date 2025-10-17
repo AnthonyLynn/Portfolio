@@ -8,7 +8,7 @@ interface ExperienceSectionProps {}
 
 export const ExperienceSection: React.FC<ExperienceSectionProps> = ({}) => {
   return (
-    <section className="flex flex-col gap-2 text-base">
+    <section className="flex flex-col gap-2 text-base" id="experience">
       <button className="flex relative z-10 w-full bg-base-tertiary rounded-md p-1 items-center leading-[24px]">
         <div className="absolute -z-10 w-[calc(50%-4px)] h-[calc(100%-8px)] rounded-sm bg-base-secondary"></div>
         <p className="w-[50%]">Work</p>
@@ -23,9 +23,9 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({}) => {
             companyName={"Electric City Aquarium & Reptile Den"}
             roleTitle={"Front-End Software Engineer"}
             descriptions={[
-              "Developed and improved website visuals using React, Tailwind CSS, and Typescript.",
-              "Collaborated with a team of 7 developers using Git and Agile methodologies.",
-              "Programmed reusable components with UI documentation in Storybook, and unit tests with Vitest.",
+              "Developed React components with Tailwind CSS and Typescript based on Figma mockups, delivering clean UI and smooth user experiences.",
+              "Collaborated in a team of 7 software engineers using Git, Jira, and Agile methodologies; effectively delivering a product in less than 3 months.",
+              "Created storybooks and unit tested with Vitest to ensure quality.",
             ]}
             externalLinks={[
               {

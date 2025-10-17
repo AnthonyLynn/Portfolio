@@ -11,7 +11,7 @@ interface AboutProps {}
 
 export const About: React.FC<AboutProps> = ({}) => {
   return (
-    <section className="flex py-12 justify-center gap-10">
+    <section className="flex py-12 justify-center gap-10" id="about">
       <div className="flex flex-col justify-between">
         <div className="flex flex-col gap-1">
           <div>
@@ -42,10 +42,10 @@ export const About: React.FC<AboutProps> = ({}) => {
           <a href="https://www.linkedin.com/in/anthony-w-lynn" target="_blank">
             <LinkedInIcon className="h-3 stroke-text-primary" />
           </a>
-          <a href="" target="_blank">
+          <a href="https://github.com/AnthonyLynn" target="_blank">
             <GitHubIcon className="h-3 stroke-text-primary" />
           </a>
-          <a href="" target="_blank">
+          <a href="mailto:anthonywlynn2002@gmail.com" target="_blank">
             <MailIcon className="h-3 stroke-text-primary fill-text-primary" />
           </a>
         </div>
