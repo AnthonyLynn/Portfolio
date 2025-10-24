@@ -30,7 +30,11 @@ export const Project: React.FC<ProjectProps> = ({
         target="_blank"
         className="p-1 border border-base-tertiary rounded-md box-border"
       >
-        <img src={image} alt={title} />
+        <img
+          src={image}
+          alt={title}
+          className="object-cover w-full aspect-5/3"
+        />
       </a>
       <div>
         <div className="flex justify-between">

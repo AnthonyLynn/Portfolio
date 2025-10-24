@@ -9,7 +9,7 @@ export const ProjectSection: React.FC<ProjectSectionProps> = ({}) => {
   return (
     <section className="flex flex-col gap-2" id="projects">
       <h2 className="text-xl font-bold">Projects</h2>
-      <div className="grid grid-cols-3 gap-1.5">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-1.5">
         <Project
           image={NewsAppScreenshot}
           title="News Explorer"
