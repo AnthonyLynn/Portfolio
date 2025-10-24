@@ -11,7 +11,7 @@ export const Footer: React.FC<FooterProps> = ({}) => {
 
   return (
     <footer className="w-full bg-base-primary flex justify-center">
-      <div className="flex justify-between w-[640px] py-4 items-center">
+      <div className="flex justify-between w-[640px] px-2 sm:px-0 py-3 sm:py-4 items-center">
         <p className="font-medium text-xs text-text-secondary">
           &copy; {currentYear} anthonywlynn.com{" "}
         </p>
