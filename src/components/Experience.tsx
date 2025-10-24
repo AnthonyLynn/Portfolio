@@ -38,20 +38,24 @@ export const Experience: React.FC<ExperienceProps> = ({
             <p className="text-sm text-text-secondary">{roleTitle}</p>
           </div>
           <ul className="list-none sm:list-['•_'] flex flex-col gap-2 sm:gap-0 items-center sm:items-start">
-            {descriptions.map((description) => {
+            {descriptions.map((description, index) => {
               return (
-                <li className="font-normal text-sm text-center sm:text-left">
+                <li
+                  className="font-normal text-sm text-center sm:text-left"
+                  key={index}
+                >
                   {description}
                 </li>
               );
             })}
           </ul>
         </div>
-        {externalLinks.map((externalLink) => {
+        {externalLinks.map((externalLink, index) => {
           return (
             <a
               href={externalLink.link}
               className="flex px-2 py-1 bg-text-primary rounded-sm items-center gap-2 hover:bg-text-secondary"
+              key={index}
             >
               <ExternalLinkIcon className="stroke-text-tertiary h-2.5" />
               <p className="text-text-tertiary text-xs font-medium">

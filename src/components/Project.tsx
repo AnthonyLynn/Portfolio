@@ -54,9 +54,12 @@ export const Project: React.FC<ProjectProps> = ({
         <p className="text-xs text-text-secondary">{description}</p>
       </div>
       <div className="flex gap-1">
-        {skills.map((skill) => {
+        {skills.map((skill, index) => {
           return (
-            <div className="text-xs font-medium py-0.5 px-1.5 rounded-sm bg-base-tertiary">
+            <div
+              className="text-xs font-medium py-0.5 px-1.5 rounded-sm bg-base-tertiary"
+              key={index}
+            >
               {skill}
             </div>
           );
