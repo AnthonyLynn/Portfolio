@@ -16,8 +16,8 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({}) => {
           Education
         </p>
       </button>
-      <div className="relative z-10 border border-base-tertiary rounded-md p-4 flex overflow-hidden">
-        <div className="w-full shrink-0 flex flex-col gap-6">
+      <div className="relative z-10 border border-base-tertiary rounded-md p-2 sm:p-4 flex overflow-hidden">
+        <div className="w-full shrink-0 flex flex-col gap-4 sm:gap-6">
           <Experience
             institutionLogo={AquariumReptileDenCompanyLogo}
             beginDate={"Jun 2025"}
@@ -48,10 +48,10 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({}) => {
             ]}
             externalLinks={[]}
           />
-          <div className="absolute -z-10 h-full w-px bg-base-tertiary left-10 top-0"></div>
+          <div className="absolute -z-10 h-full w-px bg-base-tertiary left-10 top-0 hidden sm:inline"></div>
         </div>
         <div className="w-full shrink-0">
-          <div className="absolute -z-10 h-full w-px bg-base-tertiary left-10 top-0"></div>
+          <div className="absolute -z-10 h-full w-px bg-base-tertiary left-10 top-0 hidden sm:inline"></div>
         </div>
       </div>
     </section>

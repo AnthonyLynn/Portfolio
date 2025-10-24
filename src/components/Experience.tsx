@@ -22,22 +22,28 @@ export const Experience: React.FC<ExperienceProps> = ({
   externalLinks,
 }) => {
   return (
-    <article className="flex gap-4 items-start">
+    <article className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 sm:items-start">
       <img
         src={institutionLogo}
         alt="Institution Logo"
         className="aspect-square rounded-full w-12 border border-base-tertiary stroke-out box-content"
       />
-      <div className="flex flex-col gap-2 items-start">
-        <div className="flex flex-col items-start">
-          <p className="text-xs text-text-secondary font-light">
-            {beginDate} - {endDate}
-          </p>
-          <h3 className="text-base font-bold">{companyName}</h3>
-          <p className="text-sm text-text-secondary">{roleTitle}</p>
-          <ul className="list-['•_'] flex flex-col items-start">
+      <div className="flex flex-col gap-4 sm:gap-2 items-center sm:items-start">
+        <div className="flex flex-col gap-2 sm:gap-0 items-center sm:items-start">
+          <div className="flex flex-col items-center sm:items-start">
+            <p className="text-xs text-text-secondary font-light">
+              {beginDate} - {endDate}
+            </p>
+            <h3 className="text-base font-bold">{companyName}</h3>
+            <p className="text-sm text-text-secondary">{roleTitle}</p>
+          </div>
+          <ul className="list-none sm:list-['•_'] flex flex-col gap-2 sm:gap-0 items-center sm:items-start">
             {descriptions.map((description) => {
-              return <li className="font-normal text-sm">{description}</li>;
+              return (
+                <li className="font-normal text-sm text-center sm:text-left">
+                  {description}
+                </li>
+              );
             })}
           </ul>
         </div>
