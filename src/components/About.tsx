@@ -11,12 +11,17 @@ interface AboutProps {}
 
 export const About: React.FC<AboutProps> = ({}) => {
   return (
-    <section className="flex py-12 justify-center gap-10" id="about">
-      <div className="flex flex-col justify-between">
-        <div className="flex flex-col gap-1">
-          <div>
-            <h1 className="font-bold text-4xl">Anthony Lynn</h1>
-            <p className="font-bold text-lg">
+    <section
+      className="flex flex-col-reverse sm:flex-row py-8 sm:py-10 justify-center gap-2 sm:gap-10 items-center sm:items-stretch"
+      id="about"
+    >
+      <div className="flex flex-col items-center sm:items-start justify-between gap-8 sm:gap-0">
+        <div className="flex flex-col sm:items-start items-center">
+          <div className="flex flex-col sm:items-start items-center">
+            <h1 className="font-bold text-2xl sm:text-4xl w-max">
+              Anthony Lynn
+            </h1>
+            <p className="font-bold sm:text-lg">
               Software Engineer | Game Developer
             </p>
           </div>
@@ -29,28 +34,50 @@ export const About: React.FC<AboutProps> = ({}) => {
             <p className="text-text-secondary text-sm">USA, Virginia</p>
           </a>
         </div>
-        <div className="flex justify-start items-center gap-3">
+        <div className="flex flex-col gap-4 w-max sm:gap-3 sm:flex-row justify-start items-center">
           <a
             href=""
             download="AnthonyLynnResume"
-            className="flex border border-text-primary px-2 py-1 rounded-sm
+            className="flex justify-center w-full border border-text-primary px-2 py-1 rounded-sm
            gap-2 group hover:bg-base-tertiary"
           >
             <p className="text-xs leading-none">Resume</p>
             <FileDownloadIcon className="h-3 fill-text-primary" />
           </a>
-          <a href="https://www.linkedin.com/in/anthony-w-lynn" target="_blank">
-            <LinkedInIcon className="h-3 stroke-text-primary hover:stroke-text-secondary" />
+          <a
+            href="https://www.linkedin.com/in/anthony-w-lynn"
+            target="_blank"
+            className="flex justify-center w-full border border-text-primary px-2 py-1 sm:p-0 rounded-sm
+           gap-2 group hover:bg-base-tertiary sm:hover:bg-transparent sm:border-none"
+          >
+            <p className="text-xs leading-none sm:hidden">LinkedIn</p>
+            <LinkedInIcon className="h-3 stroke-text-primary sm:hover:stroke-text-secondary" />
           </a>
-          <a href="https://github.com/AnthonyLynn" target="_blank">
-            <GitHubIcon className="h-3 stroke-text-primary hover:stroke-text-secondary" />
+          <a
+            href="https://github.com/AnthonyLynn"
+            target="_blank"
+            className="flex justify-center w-full border border-text-primary px-2 py-1 sm:p-0 rounded-sm
+           gap-2 group hover:bg-base-tertiary sm:hover:bg-transparent sm:border-none"
+          >
+            <p className="text-xs leading-none sm:hidden">GitHub</p>
+            <GitHubIcon className="h-3 stroke-text-primary sm:hover:stroke-text-secondary" />
           </a>
-          <a href="mailto:anthonywlynn2002@gmail.com" target="_blank">
-            <MailIcon className="h-3 stroke-text-primary fill-text-primary hover:fill-text-secondary hover:stroke-text-secondary" />
+          <a
+            href="mailto:anthonywlynn2002@gmail.com"
+            target="_blank"
+            className="flex justify-center w-full border border-text-primary px-2 py-1 sm:p-0 rounded-sm
+           gap-2 group hover:bg-base-tertiary sm:hover:bg-transparent sm:border-none"
+          >
+            <p className="text-xs leading-none sm:hidden">Email</p>
+            <MailIcon className="h-3 stroke-text-primary fill-text-primary sm:hover:fill-text-secondary sm:hover:stroke-text-secondary" />
           </a>
         </div>
       </div>
-      <img src={ProfilePicture} alt="Profile Picture" className="rounded-md" />
+      <img
+        src={ProfilePicture}
+        alt="Profile Picture"
+        className="rounded-full sm:rounded-md w-[75px] sm:w-auto aspect-square sm:aspect-auto object-cover"
+      />
     </section>
   );
 };

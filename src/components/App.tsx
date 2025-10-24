@@ -9,7 +9,7 @@ export const App = ({}) => {
   return (
     <div className="min-h-screen w-full flex flex-col items-center">
       <Header />
-      <main className="w-[640px] pb-8 flex flex-col gap-7">
+      <main className="w-full max-w-[640px] sm:py-5 flex flex-col gap-4 sm:gap-7 px-2">
         <About />
         <ExperienceSection />
         <SkillSection />
