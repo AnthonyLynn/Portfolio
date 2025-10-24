@@ -35,7 +35,7 @@ export const Experience: React.FC<ExperienceProps> = ({
           </p>
           <h3 className="text-base font-bold">{companyName}</h3>
           <p className="text-sm text-text-secondary">{roleTitle}</p>
-          <ul className="list-['•_'] list-inside flex flex-col items-start">
+          <ul className="list-['•_'] flex flex-col items-start">
             {descriptions.map((description) => {
               return <li className="font-normal text-sm">{description}</li>;
             })}
@@ -45,7 +45,7 @@ export const Experience: React.FC<ExperienceProps> = ({
           return (
             <a
               href={externalLink.link}
-              className="flex px-2 py-1 bg-text-primary rounded-sm items-center gap-2"
+              className="flex px-2 py-1 bg-text-primary rounded-sm items-center gap-2 hover:bg-text-secondary"
             >
               <ExternalLinkIcon className="stroke-text-tertiary h-2.5" />
               <p className="text-text-tertiary text-xs font-medium">

@@ -24,7 +24,7 @@ export const Project: React.FC<ProjectProps> = ({
   gitHubLink,
 }) => {
   return (
-    <article className="flex flex-col gap-2">
+    <article className="flex flex-col gap-1">
       <a
         href={websiteLink}
         target="_blank"
@@ -37,13 +37,13 @@ export const Project: React.FC<ProjectProps> = ({
           <h3 className="font-bold text-base">{title}</h3>
           <nav className="flex gap-2 items-center p-1">
             <a href={websiteLink} target="_blank">
-              <ExternalLinkIcon className="h-3 stroke-link-color" />
+              <ExternalLinkIcon className="h-3 stroke-link-color hover:stroke-text-secondary" />
             </a>
             <a href={demoLink} target="_blank">
-              <YouTubeIcon className="h-3 stroke-link-color" />
+              <YouTubeIcon className="h-3 stroke-link-color hover:stroke-text-secondary" />
             </a>
             <a href={gitHubLink} target="_blank" className="fill-white">
-              <GitHubIcon className="h-3 stroke-link-color" />
+              <GitHubIcon className="h-3 stroke-link-color hover:stroke-text-secondary" />
             </a>
           </nav>
         </div>

@@ -33,20 +33,20 @@ export const About: React.FC<AboutProps> = ({}) => {
           <a
             href=""
             download="AnthonyLynnResume"
-            className="flex border border-text-secondary px-2 py-1 rounded-sm
-           gap-2"
+            className="flex border border-text-primary px-2 py-1 rounded-sm
+           gap-2 group hover:bg-base-tertiary"
           >
             <p className="text-xs leading-none">Resume</p>
             <FileDownloadIcon className="h-3 fill-text-primary" />
           </a>
           <a href="https://www.linkedin.com/in/anthony-w-lynn" target="_blank">
-            <LinkedInIcon className="h-3 stroke-text-primary" />
+            <LinkedInIcon className="h-3 stroke-text-primary hover:stroke-text-secondary" />
           </a>
           <a href="https://github.com/AnthonyLynn" target="_blank">
-            <GitHubIcon className="h-3 stroke-text-primary" />
+            <GitHubIcon className="h-3 stroke-text-primary hover:stroke-text-secondary" />
           </a>
           <a href="mailto:anthonywlynn2002@gmail.com" target="_blank">
-            <MailIcon className="h-3 stroke-text-primary fill-text-primary" />
+            <MailIcon className="h-3 stroke-text-primary fill-text-primary hover:fill-text-secondary hover:stroke-text-secondary" />
           </a>
         </div>
       </div>

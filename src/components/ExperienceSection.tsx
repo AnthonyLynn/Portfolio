@@ -9,10 +9,12 @@ interface ExperienceSectionProps {}
 export const ExperienceSection: React.FC<ExperienceSectionProps> = ({}) => {
   return (
     <section className="flex flex-col gap-2 text-base" id="experience">
-      <button className="flex relative z-10 w-full bg-base-tertiary rounded-md p-1 items-center leading-[24px]">
-        <div className="absolute -z-10 w-[calc(50%-4px)] h-[calc(100%-8px)] rounded-sm bg-base-secondary"></div>
-        <p className="w-[50%]">Work</p>
-        <p className="w-[50%] text-text-secondary">Education</p>
+      <button className="flex relative z-10 w-full bg-base-tertiary rounded-md p-0.75 items-center text-sm leading-[20px] hover:cursor-pointer">
+        <div className="absolute -z-10 w-[calc(50%-3px)] h-[calc(100%-6px)] rounded-sm bg-base-secondary"></div>
+        <p className="w-[50%] relative top-[1px]">Work</p>
+        <p className="w-[50%] relative top-[1px] text-text-secondary">
+          Education
+        </p>
       </button>
       <div className="relative z-10 border border-base-tertiary rounded-md p-4 flex overflow-hidden">
         <div className="w-full shrink-0 flex flex-col gap-6">

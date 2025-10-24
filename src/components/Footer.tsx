@@ -17,13 +17,13 @@ export const Footer: React.FC<FooterProps> = ({}) => {
         </p>
         <nav className="flex gap-4">
           <a href="https://www.linkedin.com/in/anthony-w-lynn" target="_blank">
-            <LinkedInIcon className="stroke-text-secondary h-3" />
+            <LinkedInIcon className="stroke-text-secondary hover:stroke-text-primary h-3" />
           </a>
           <a href="https://github.com/AnthonyLynn" target="_blank">
-            <GitHubIcon className="stroke-text-secondary h-3" />
+            <GitHubIcon className="stroke-text-secondary hover:stroke-text-primary h-3" />
           </a>
           <a href="mailto:anthonywlynn2002@gmail.com" target="_blank">
-            <MailIcon className="fill-text-secondary stroke-text-secondary h-3" />
+            <MailIcon className="fill-text-secondary stroke-text-secondary h-3 hover:fill-text-primary hover:stroke-text-primary" />
           </a>
         </nav>
       </div>

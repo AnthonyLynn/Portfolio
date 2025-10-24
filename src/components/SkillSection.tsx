@@ -34,7 +34,11 @@ export const SkillSection: React.FC<SkillSectionProps> = ({}) => {
         />
         <Skill logo={JiraIcon} name="Jira" description="Project Management" />
       </div>
-      <button className="w-full text-sm text-text-secondary">view more</button>
+      <div className="w-full flex justify-center">
+        <button className="text-sm text-text-secondary hover:text-text-primary hover:cursor-pointer">
+          view more
+        </button>
+      </div>
     </section>
   );
 };

@@ -20,7 +20,11 @@ export const ProjectSection: React.FC<ProjectSectionProps> = ({}) => {
           gitHubLink=""
         />
       </div>
-      <button className="w-full text-sm text-text-secondary">view more</button>
+      <div className="w-full flex justify-center">
+        <button className="text-sm text-text-secondary hover:text-text-primary hover:cursor-pointer">
+          view more
+        </button>
+      </div>
     </section>
   );
 };
