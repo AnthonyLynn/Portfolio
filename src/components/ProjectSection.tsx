@@ -23,42 +23,6 @@ export const ProjectSection: React.FC<ProjectSectionProps> = ({}) => {
           demoLink=""
           gitHubLink=""
         />
-        <Project
-          image={NewsAppScreenshot}
-          title="News Explorer"
-          description="Front-end news site using React and JavaScript to search and save news articles."
-          skills={["React.js", "JavaScript", "News API"]}
-          websiteLink=""
-          demoLink=""
-          gitHubLink=""
-        />
-        <Project
-          image={NewsAppScreenshot}
-          title="News Explorer"
-          description="Front-end news site using React and JavaScript to search and save news articles."
-          skills={["React.js", "JavaScript", "News API"]}
-          websiteLink=""
-          demoLink=""
-          gitHubLink=""
-        />
-        <Project
-          image={NewsAppScreenshot}
-          title="News Explorer"
-          description="Front-end news site using React and JavaScript to search and save news articles."
-          skills={["React.js", "JavaScript", "News API"]}
-          websiteLink=""
-          demoLink=""
-          gitHubLink=""
-        />
-        <Project
-          image={NewsAppScreenshot}
-          title="News Explorer"
-          description="Front-end news site using React and JavaScript to search and save news articles."
-          skills={["React.js", "JavaScript", "News API"]}
-          websiteLink=""
-          demoLink=""
-          gitHubLink=""
-        />
       </ExpandGrid>
     </section>
   );

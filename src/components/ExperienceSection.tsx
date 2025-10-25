@@ -1,23 +1,50 @@
 import AquariumReptileDenCompanyLogo from "../images/AquariumReptileDenCompanyLogo.png";
 import TripleTenLogo from "../images/TripleTenCompanyLogo.png";
 
-import React from "react";
+import React, { useState } from "react";
 import { Experience } from "./Experience";
 
 interface ExperienceSectionProps {}
 
 export const ExperienceSection: React.FC<ExperienceSectionProps> = ({}) => {
+  const [showExperience, setShowExperience] = useState<boolean>(true);
+
+  function onExperienceToggle() {
+    setShowExperience(!showExperience);
+  }
+
   return (
     <section className="flex flex-col gap-2 text-base" id="experience">
-      <button className="flex relative z-10 w-full bg-base-tertiary rounded-md p-0.75 items-center text-sm leading-[20px] hover:cursor-pointer">
-        <div className="absolute -z-10 w-[calc(50%-3px)] h-[calc(100%-6px)] rounded-sm bg-base-secondary"></div>
-        <p className="w-[50%] relative top-[1px]">Work</p>
-        <p className="w-[50%] relative top-[1px] text-text-secondary">
+      <button
+        className="flex relative z-10 w-full bg-base-tertiary rounded-md p-0.75 items-center text-sm leading-[20px] hover:cursor-pointer"
+        onClick={onExperienceToggle}
+      >
+        <div
+          className={`absolute -z-10 w-[calc(50%-3px)] h-[calc(100%-6px)] rounded-sm bg-base-secondary ${
+            showExperience && "right-[3px]"
+          }`}
+        ></div>
+        <p
+          className={`w-[50%] relative top-[1px] ${
+            showExperience && "text-text-secondary"
+          }`}
+        >
+          Work
+        </p>
+        <p
+          className={`w-[50%] relative top-[1px] ${
+            !showExperience && "text-text-secondary"
+          }`}
+        >
           Education
         </p>
       </button>
-      <div className="relative z-10 border border-base-tertiary rounded-md p-2 sm:p-4 flex overflow-hidden">
-        <div className="w-full shrink-0 flex flex-col gap-6">
+      <div className="relative z-10 border border-base-tertiary rounded-md p-2 sm:p-4">
+        <div
+          className={`w-full shrink-0 flex flex-col gap-6 ${
+            showExperience ? "hidden" : "block"
+          }`}
+        >
           <Experience
             institutionLogo={AquariumReptileDenCompanyLogo}
             beginDate={"Jun 2025"}
@@ -50,7 +77,11 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({}) => {
           />
           <div className="absolute -z-10 h-full w-px bg-base-tertiary left-10 top-0 hidden sm:inline"></div>
         </div>
-        <div className="w-full shrink-0">
+        <div
+          className={`w-full shrink-0 flex flex-col gap-6 ${
+            showExperience ? "block" : "hidden"
+          }`}
+        >
           <div className="absolute -z-10 h-full w-px bg-base-tertiary left-10 top-0 hidden sm:inline"></div>
         </div>
       </div>
