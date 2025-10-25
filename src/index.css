@@ -1,8 +1,6 @@
 @import "./vendor/fonts.css";
 @import "tailwindcss";
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
-
 .font-roboto {
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }
