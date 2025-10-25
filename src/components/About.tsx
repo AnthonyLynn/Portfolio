@@ -4,6 +4,7 @@ import { FileDownloadIcon } from "./Icons/FileDownloadIcon";
 import { MailIcon } from "./Icons/MailIcon";
 import { LinkedInIcon } from "./Icons/LinkedInIcon";
 import { GitHubIcon } from "./Icons/GitHubIcon";
+import Resume from "../Resume.pdf";
 
 import React from "react";
 
@@ -36,7 +37,7 @@ export const About: React.FC<AboutProps> = ({}) => {
         </div>
         <div className="flex flex-col gap-4 w-max sm:gap-3 sm:flex-row justify-start items-center">
           <a
-            href=""
+            href={Resume}
             download="AnthonyLynnResume"
             className="flex justify-center w-full border border-text-primary px-2 py-1 rounded-sm
            gap-2 group hover:bg-base-tertiary"

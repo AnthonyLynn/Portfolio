@@ -1,5 +1,6 @@
 import React from "react";
 import { Skill } from "./Skill";
+import { ExpandGrid } from "./ExpandGrid";
 
 import FigmaIcon from "../images/FigmaIcon.svg";
 import ReactIcon from "../images/ReactIcon.svg";
@@ -14,7 +15,7 @@ export const SkillSection: React.FC<SkillSectionProps> = ({}) => {
   return (
     <section className="flex flex-col gap-2" id="skills">
       <h2 className="text-xl font-bold">Skills</h2>
-      <div className="grid grid-cols-3 gap-1.5">
+      <ExpandGrid rowAmount={3} initialRowsShown={2}>
         <Skill logo={FigmaIcon} name="Figma" description="Design Tool" />
         <Skill logo={ReactIcon} name="React" description="JavaScript Library" />
         <Skill
@@ -33,12 +34,7 @@ export const SkillSection: React.FC<SkillSectionProps> = ({}) => {
           description="Version Control"
         />
         <Skill logo={JiraIcon} name="Jira" description="Project Management" />
-      </div>
-      <div className="w-full flex justify-center">
-        <button className="text-sm text-text-secondary hover:text-text-primary hover:cursor-pointer">
-          view more
-        </button>
-      </div>
+      </ExpandGrid>
     </section>
   );
 };
