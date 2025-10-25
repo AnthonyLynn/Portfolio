@@ -1,11 +1,15 @@
 import { SunIcon } from "./Icons/SunIcon";
 import { MoonIcon } from "./Icons/MoonIcon";
 
-import React from "react";
+interface HeaderProps {
+  onThemeButtonClick: () => void;
+  isDarkTheme: boolean;
+}
 
-interface HeaderProps {}
-
-export const Header: React.FC<HeaderProps> = ({}) => {
+export const Header: React.FC<HeaderProps> = ({
+  onThemeButtonClick,
+  isDarkTheme,
+}) => {
   return (
     <header className="bg-base-primary/90 sticky z-20 left-0 top-0 w-full backdrop-blur-xs">
       <div className="h-full max-w-[640px] w-full flex justify-between m-auto">
@@ -35,9 +39,20 @@ export const Header: React.FC<HeaderProps> = ({}) => {
             Projects
           </a>
         </nav>
-        <button className="hover:cursor-pointer px-2 sm:pr-0 group">
-          <SunIcon className="visible fill-orange-accent-color h-4 group-hover:fill-text-secondary" />
-          <MoonIcon className="hidden stroke-purple-accent-color h-4" />
+        <button
+          className="hover:cursor-pointer px-2 sm:pr-0 group"
+          onClick={onThemeButtonClick}
+        >
+          <SunIcon
+            className={`${
+              !isDarkTheme && "hidden"
+            } fill-orange-accent-color h-4 group-hover:fill-text-secondary`}
+          />
+          <MoonIcon
+            className={`${
+              isDarkTheme && "hidden"
+            } stroke-purple-accent-color h-4 group-hover:fill-text-secondary`}
+          />
         </button>
       </div>
     </header>

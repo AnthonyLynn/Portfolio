@@ -7,7 +7,7 @@ import { Experience } from "./Experience";
 interface ExperienceSectionProps {}
 
 export const ExperienceSection: React.FC<ExperienceSectionProps> = ({}) => {
-  const [showExperience, setShowExperience] = useState<boolean>(true);
+  const [showExperience, setShowExperience] = useState<boolean>(false);
 
   function onExperienceToggle() {
     setShowExperience(!showExperience);

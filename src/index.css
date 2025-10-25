@@ -9,10 +9,10 @@
 
 :root {
   position: relative;
-  background-color: var(--color-base-secondary);
-  color: var(--color-text-primary);
   font-family: Roboto, Arial, Helvetica, sans-serif;
+}
 
+.light {
   --color-base-primary-color: #ededed;
   --color-base-secondary-color: #f6f6f6;
   --color-base-tertiary-color: #e4e4e4;
@@ -21,7 +21,7 @@
   --color-text-tertiary-color: #ffffff;
 }
 
-[data-theme="dark"] {
+.dark {
   --color-base-primary-color: #0d0d12;
   --color-base-secondary-color: #111422;
   --color-base-tertiary-color: #2d334b;
