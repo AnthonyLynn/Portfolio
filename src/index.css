@@ -1,6 +1,8 @@
 @import "./vendor/fonts.css";
 @import "tailwindcss";
 
+@tailwind utilities;
+
 .font-roboto {
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }

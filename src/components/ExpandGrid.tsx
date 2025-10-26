@@ -43,9 +43,14 @@ export const ExpandGrid: React.FC<ExpandGridProps> = ({
     }
   }, [rowAmount]);
 
+  const gridCols: { [key: number]: string } = {
+    1: "grid-cols-1",
+    3: "grid-cols-3",
+  };
+
   return (
     <>
-      <div className={`grid grid-cols-${rowAmount} gap-1.5`}>
+      <div className={`grid ${gridCols[rowAmount]} gap-1.5`}>
         {childrenArray.slice(0, amountOfElementsShown).map((child) => child)}
       </div>
       <div className="w-full flex justify-center">
