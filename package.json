@@ -3,13 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://anthonylynn.github.io/Portfolio/",
+  "homepage": "https://anthony-lynn.com",
   "scripts": {
     "dev": "vite --open",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "deploy-gh-pages": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",
