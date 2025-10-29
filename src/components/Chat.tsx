@@ -40,9 +40,11 @@ export const Chat: React.FC<ChatProps> = ({ onMessageSent }) => {
           <XIcon className="w-4 aspect-square fill-text-primary" />
         </button>
       </div>
-      <ul className="grow bg-base-primary overflow-y-scroll p-2 py-1 pr-2 scrollbar mr-1 mt-1 mb-1">
-        <li className="h-[200%] w-full"></li>
-      </ul>
+      <div className="grow bg-base-primary">
+        <ul className="h-full overflow-y-scroll p-2 pt-1 pr-2 scrollbar mr-1 mt-1 mb-1">
+          <li className="h-[200%] w-full"></li>
+        </ul>
+      </div>
       <div className="p-2 rounded-b-md bg-base-tertiary">
         <form
           className="p-2 pl-4 rounded-sm bg-base-primary flex items-center justify-between"
