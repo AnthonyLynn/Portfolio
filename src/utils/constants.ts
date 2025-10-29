@@ -7,6 +7,6 @@ if (!conversationId) {
   conversationId = newId;
 }
 
-export const apiKey = process.env.CHATBASE_KEY;
+export const apiKey = import.meta.env.CHATBASE_KEY;
 export const chatbotId = "gRkwKa2e8Q2Cna51rAeqP";
 export const apiUrl = "https://www.chatbase.co/api/v1";

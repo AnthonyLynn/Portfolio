@@ -44,3 +44,15 @@
   --color-purple-accent-color: #cc80ff;
   --color-orange-accent-color: #ffb682;
 }
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    background-color: var(--color-base-primary);
+    width: 8px;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--color-base-tertiary);
+    border-radius: calc(infinity * 1px);
+  }
+}

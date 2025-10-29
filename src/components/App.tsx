@@ -1,3 +1,7 @@
+import { useEffect, useState } from "react";
+
+import { sendChatBotMessage } from "../utils/chatbaseApi";
+
 import { Header } from "./Header";
 import { About } from "./About";
 import { ExperienceSection } from "./ExperienceSection";
@@ -5,18 +9,43 @@ import { SkillSection } from "./SkillSection";
 import { ProjectSection } from "./ProjectSection";
 import { Footer } from "./Footer";
 import { ChatButton } from "./ChatButton";
+import { Chat } from "./Chat";
 
-import { useEffect, useState } from "react";
+interface FromValues {
+  message: string;
+}
+
+type Role = "user" | "assistant";
 
 export const App = ({}) => {
-  document.documentElement.classList.toggle(
-    "dark",
+  const [messageStack, setMessageStack] = useState<
+    { role: Role; content: string }[]
+  >([]);
+
+  const addMessage = (role: Role, message: string) => {
+    setMessageStack([...messageStack, { role: role, content: message }]);
+  };
+
+  const onMessageSent = ({ message }: FromValues) => {
+    addMessage("user", message);
+
+    sendChatBotMessage({
+      message: message,
+      conversationId: "",
+    })
+      .then(({ text }) => {
+        addMessage("assistant", text);
+      })
+      .catch((errorMessage: string) => {
+        console.log(errorMessage);
+      });
+  };
+
+  const [isDarkTheme, setIsDarkTheme] = useState(
     localStorage.theme === "dark" ||
       (!("theme" in localStorage) &&
         window.matchMedia("(prefers-color-scheme: dark)").matches)
   );
-
-  const [isDarkTheme, setIsDarkTheme] = useState(localStorage.theme === "dark");
 
   function onThemeChange() {
     setIsDarkTheme(!isDarkTheme);
@@ -39,6 +68,7 @@ export const App = ({}) => {
         <ProjectSection />
       </main>
       <div className="sticky w-full bottom-0 p-3 sm:p-4 lg:p-0 flex justify-end">
+        <Chat onMessageSent={onMessageSent} />
         <ChatButton />
       </div>
       <Footer />
