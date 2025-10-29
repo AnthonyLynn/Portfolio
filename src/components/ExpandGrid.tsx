@@ -50,19 +50,19 @@ export const ExpandGrid: React.FC<ExpandGridProps> = ({
 
   return (
     <>
-      <div className={`grid ${gridCols[rowAmount]} gap-1.5`}>
+      <div className={`grid ${gridCols[rowAmount]} gap-1.5 auto-rows-fr`}>
         {childrenArray.slice(0, amountOfElementsShown).map((child) => child)}
       </div>
-      <div className="w-full flex justify-center">
-        {canShowMore && (
+      {canShowMore && (
+        <div className="w-full flex justify-center">
           <button
             className="text-sm text-text-secondary hover:text-text-primary hover:cursor-pointer"
             onClick={onShowMore}
           >
             view more
           </button>
-        )}
-      </div>
+        </div>
+      )}
     </>
   );
 };

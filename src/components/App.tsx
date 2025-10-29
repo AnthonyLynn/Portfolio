@@ -31,7 +31,7 @@ export const App = ({}) => {
       }`}
     >
       <Header onThemeButtonClick={onThemeChange} isDarkTheme={isDarkTheme} />
-      <main className="w-full max-w-[640px] pb-2 sm:py-5 flex flex-col gap-4 sm:gap-7 px-2">
+      <main className="w-full md:max-w-[640px] p-3 pb-24 sm:p-4 sm:pb-24 lg:pb-3 md:px-0 flex flex-col gap-4 sm:gap-7">
         <About />
         <ExperienceSection />
         <SkillSection />
