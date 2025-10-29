@@ -51,7 +51,7 @@ export const Header: React.FC<HeaderProps> = ({
           <MoonIcon
             className={`${
               isDarkTheme && "hidden"
-            } stroke-purple-accent-color h-4 group-hover:fill-text-secondary`}
+            } fill-purple-accent-color stroke-purple-accent-color h-4 group-hover:fill-text-secondary`}
           />
         </button>
       </div>
