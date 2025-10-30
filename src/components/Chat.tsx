@@ -1,4 +1,4 @@
-import React, { FormEvent } from "react";
+import React, { FormEvent, useState } from "react";
 
 import { useForm } from "../hooks/useForm";
 
@@ -26,9 +26,17 @@ export const Chat: React.FC<ChatProps> = ({ onMessageSent }) => {
     onMessageSent(values);
   };
 
+  const [modelOpen, setModalOpen] = useState(false);
+
+  const onClose = () => {
+    setModalOpen(true);
+  };
+
   return (
     <dialog
-      className="lg:absolute left-auto lg:right-4 lg:bottom-4 w-[380px] bg-transparent flex flex-col text-text-primary"
+      className={`lg:absolute left-auto lg:right-4 lg:bottom-4 w-[380px] bg-transparent flex flex-col text-text-primary ${
+        modelOpen && "hidden"
+      } `}
       open
     >
       <div className="bg-base-tertiary flex justify-between p-3 rounded-t-md">
@@ -39,7 +47,10 @@ export const Chat: React.FC<ChatProps> = ({ onMessageSent }) => {
           />
           <figcaption>AI Assistant</figcaption>
         </figure>
-        <button className="w-8 aspect-square flex items-center justify-center">
+        <button
+          className="w-8 aspect-square flex items-center justify-center"
+          onClick={onClose}
+        >
           <XIcon className="w-4 aspect-square fill-text-primary" />
         </button>
       </div>
