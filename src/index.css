@@ -47,12 +47,16 @@
 
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
-    background-color: var(--color-base-primary);
+    background-color: var(--color-base-primary-color);
     width: 8px;
   }
 
+  .scrollbar::-webkit-scrollbar-track {
+    margin-block: 4px;
+  }
+
   .scrollbar::-webkit-scrollbar-thumb {
-    background-color: var(--color-base-tertiary);
+    background-color: var(--color-base-tertiary-color);
     border-radius: calc(infinity * 1px);
   }
 }

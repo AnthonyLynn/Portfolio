@@ -28,7 +28,7 @@ export const Chat: React.FC<ChatProps> = ({ onMessageSent }) => {
 
   return (
     <dialog
-      className="lg:absolute left-auto lg:right-4 lg:bottom-4 w-[380px] h-[718px] bg-transparent flex flex-col text-text-primary"
+      className="lg:absolute left-auto lg:right-4 lg:bottom-4 w-[380px] bg-transparent flex flex-col text-text-primary"
       open
     >
       <div className="bg-base-tertiary flex justify-between p-3 rounded-t-md">
@@ -44,7 +44,7 @@ export const Chat: React.FC<ChatProps> = ({ onMessageSent }) => {
         </button>
       </div>
       <div className="grow bg-base-primary">
-        <ul className="h-[608px] overflow-y-scroll p-2 pt-1 pr-2 scrollbar mr-1 mt-1 mb-1 flex flex-col gap-4">
+        <ul className="h-[512px] overflow-y-scroll p-1 scrollbar mr-1 flex flex-col gap-2">
           <Message
             isSender={false}
             content="Hello! What can I do for you today?"
