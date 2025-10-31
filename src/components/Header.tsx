@@ -43,16 +43,11 @@ export const Header: React.FC<HeaderProps> = ({
           className="hover:cursor-pointer px-3 md:pr-0 group"
           onClick={onThemeButtonClick}
         >
-          <SunIcon
-            className={`${
-              !isDarkTheme && "hidden"
-            } fill-orange-accent-color h-4 group-hover:fill-text-secondary`}
-          />
-          <MoonIcon
-            className={`${
-              isDarkTheme && "hidden"
-            } fill-purple-accent-color stroke-purple-accent-color h-4 group-hover:fill-text-secondary`}
-          />
+          {isDarkTheme ? (
+            <SunIcon className="fill-orange-accent-color h-4 group-hover:fill-text-secondary" />
+          ) : (
+            <MoonIcon className="fill-purple-accent-color stroke-purple-accent-color h-4 group-hover:fill-text-secondary" />
+          )}
         </button>
       </div>
     </header>

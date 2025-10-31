@@ -21,6 +21,7 @@ export const App = ({}) => {
   const [messageStack, setMessageStack] = useState<
     { role: Role; content: string }[]
   >([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const addMessage = (role: Role, message: string) => {
     setMessageStack([...messageStack, { role: role, content: message }]);
@@ -39,6 +40,14 @@ export const App = ({}) => {
       .catch((errorMessage: string) => {
         console.log(errorMessage);
       });
+  };
+
+  const onModalClose = () => {
+    setIsModalOpen(false);
+  };
+
+  const onModalOpen = () => {
+    setIsModalOpen(true);
   };
 
   const [isDarkTheme, setIsDarkTheme] = useState(
@@ -68,8 +77,10 @@ export const App = ({}) => {
         <ProjectSection />
       </main>
       <div className="sticky z-10 w-full bottom-0 p-3 sm:p-4 lg:p-0 flex justify-end">
-        <Chat onMessageSent={onMessageSent} />
-        <ChatButton />
+        {isModalOpen && (
+          <Chat onMessageSent={onMessageSent} onModalClose={onModalClose} />
+        )}
+        {!isModalOpen && <ChatButton onModalOpen={onModalOpen} />}
       </div>
       <Footer />
     </div>
