@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { sendChatBotMessage } from "../utils/chatbaseApi";
+import { sendChatBotMessage, getConversations } from "../utils/chatbaseApi";
 
 import { Header } from "./Header";
 import { About } from "./About";
@@ -10,6 +10,7 @@ import { ProjectSection } from "./ProjectSection";
 import { Footer } from "./Footer";
 import { ChatButton } from "./ChatButton";
 import { Chat } from "./Chat";
+import { uuidv4 } from "../utils/idGenerator";
 
 interface FromValues {
   message: string;
@@ -20,25 +21,39 @@ type Role = "user" | "assistant";
 export const App = ({}) => {
   const [messageStack, setMessageStack] = useState<
     { role: Role; content: string }[]
-  >([]);
+  >([{ role: "assistant", content: "Hi! What can I help you with?" }]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoadingResponse, setIsLoadingResponse] = useState(false);
+
+  let conversationId = localStorage.conversationId;
+  if (!conversationId) {
+    conversationId = uuidv4();
+    localStorage.conversationId = conversationId;
+  }
 
   const addMessage = (role: Role, message: string) => {
-    setMessageStack([...messageStack, { role: role, content: message }]);
+    setMessageStack((messageStack) => [
+      ...messageStack,
+      { role: role, content: message },
+    ]);
   };
 
   const onMessageSent = ({ message }: FromValues) => {
     addMessage("user", message);
+    setIsLoadingResponse(true);
 
     sendChatBotMessage({
       message: message,
-      conversationId: "",
+      conversationId: conversationId,
     })
       .then(({ text }) => {
         addMessage("assistant", text);
       })
       .catch((errorMessage: string) => {
         console.log(errorMessage);
+      })
+      .finally(() => {
+        setIsLoadingResponse(false);
       });
   };
 
@@ -61,7 +76,25 @@ export const App = ({}) => {
     localStorage.theme = isDarkTheme ? "light" : "dark";
   }
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    getConversations()
+      .then(({ data }) => {
+        const conversation = data.find((conversation: { id: string }) => {
+          return conversation.id === conversationId;
+        });
+
+        if (!conversation) {
+          return;
+        }
+
+        const conversationData = conversation.messages.map((message) => {
+          return { role: message.role, content: message.content };
+        });
+
+        setMessageStack(conversationData);
+      })
+      .catch(console.error);
+  }, []);
 
   return (
     <div
@@ -78,7 +111,12 @@ export const App = ({}) => {
       </main>
       <div className="sticky z-10 w-full bottom-0 p-3 sm:p-4 lg:p-0 flex justify-end">
         {isModalOpen && (
-          <Chat onMessageSent={onMessageSent} onModalClose={onModalClose} />
+          <Chat
+            isLoadingResponse={isLoadingResponse}
+            messageStack={messageStack}
+            onMessageSent={onMessageSent}
+            onModalClose={onModalClose}
+          />
         )}
         {!isModalOpen && <ChatButton onModalOpen={onModalOpen} />}
       </div>

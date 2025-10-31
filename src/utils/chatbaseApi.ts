@@ -39,7 +39,11 @@ export function sendChatBotMessage({
   });
 }
 
-export function getConversations() {
+type Role = "user" | "assistant";
+
+export function getConversations(): Promise<{
+  data: { id: string; messages: { role: Role; content: string }[] }[];
+}> {
   return request(
     `${apiUrl}/get-conversations?chatbotId=${chatbotId}&filteredSources=API`,
     {

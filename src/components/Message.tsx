@@ -5,13 +5,13 @@ import { BotProfile } from "./BotProfile";
 interface MessageProps {
   shouldDisplayProfile: boolean;
   isSender: boolean;
-  content: string;
+  children: React.ReactNode;
 }
 
 export const Message: React.FC<MessageProps> = ({
   shouldDisplayProfile,
   isSender,
-  content,
+  children,
 }) => {
   return (
     <li
@@ -30,7 +30,7 @@ export const Message: React.FC<MessageProps> = ({
           <figcaption className="text-xs">AI Assistant</figcaption>
         </figure>
       )}
-      <p className="text-xs">{content}</p>
+      {children}
     </li>
   );
 };
