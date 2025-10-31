@@ -1,4 +1,5 @@
 import React from "react";
+import { uuidv4 } from "../utils/idGenerator";
 
 import { YouTubeIcon } from "./Icons/YouTubeIcon";
 import { ExternalLinkIcon } from "./Icons/ExternalLinkIcon";
@@ -38,7 +39,7 @@ export const Project: React.FC<ProjectProps> = ({
       </a>
       <div>
         <div className="flex justify-between">
-          <h3 className="font-bold text-base">{title}</h3>
+          <h3 className="font-bold">{title}</h3>
           <nav className="flex gap-2 items-center p-1">
             <a href={websiteLink} target="_blank">
               <ExternalLinkIcon className="h-3 stroke-text-primary hover:stroke-text-secondary" />
@@ -53,12 +54,12 @@ export const Project: React.FC<ProjectProps> = ({
         </div>
         <p className="text-xs text-text-secondary">{description}</p>
       </div>
-      <div className="flex gap-1">
-        {skills.map((skill, index) => {
+      <div className="flex gap-1 flex-wrap">
+        {skills.map((skill) => {
           return (
             <div
-              className="text-xs font-medium py-0.5 px-1.5 rounded-sm bg-base-tertiary"
-              key={index}
+              className="text-xs font-medium py-0.5 px-1.5 rounded-sm bg-base-tertiary w-max"
+              key={uuidv4()}
             >
               {skill}
             </div>

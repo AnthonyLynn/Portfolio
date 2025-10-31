@@ -1,4 +1,5 @@
 import { ExternalLinkIcon } from "./Icons/ExternalLinkIcon";
+import { uuidv4 } from "../utils/idGenerator";
 
 import React from "react";
 
@@ -22,13 +23,13 @@ export const Experience: React.FC<ExperienceProps> = ({
   externalLinks,
 }) => {
   return (
-    <article className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 sm:items-start">
+    <li className="relative flex flex-col sm:flex-row items-center gap-2 sm:gap-4 sm:items-start pt-8 sm:p-0 border-t-base-tertiary border-t first:border-t-0 sm:border-t-0 box-border">
       <img
         src={institutionLogo}
         alt="Institution Logo"
-        className="aspect-square rounded-full w-12 border border-base-tertiary stroke-out box-content"
+        className="absolute top-[-26px] sm:static aspect-square rounded-full w-12 border border-base-tertiary stroke-out box-content"
       />
-      <div className="flex flex-col gap-4 sm:gap-2 items-center sm:items-start">
+      <div className="flex flex-col gap-2 items-center sm:items-start">
         <div className="flex flex-col gap-2 sm:gap-0 items-center sm:items-start">
           <div className="flex flex-col items-center sm:items-start">
             <p className="text-xs text-text-secondary font-light">
@@ -37,12 +38,12 @@ export const Experience: React.FC<ExperienceProps> = ({
             <h3 className="text-base font-bold">{companyName}</h3>
             <p className="text-sm text-text-secondary">{roleTitle}</p>
           </div>
-          <ul className="list-none sm:list-['•_'] flex flex-col gap-2 sm:gap-0 items-center sm:items-start">
-            {descriptions.map((description, index) => {
+          <ul className="list-none sm:list-['•_'] flex flex-col gap-1 sm:gap-0 items-center sm:items-start">
+            {descriptions.map((description) => {
               return (
                 <li
                   className="font-normal text-sm text-center sm:text-left"
-                  key={index}
+                  key={uuidv4()}
                 >
                   {description}
                 </li>
@@ -50,12 +51,12 @@ export const Experience: React.FC<ExperienceProps> = ({
             })}
           </ul>
         </div>
-        {externalLinks.map((externalLink, index) => {
+        {externalLinks.map((externalLink) => {
           return (
             <a
               href={externalLink.link}
               className="flex px-2 py-1 bg-text-primary rounded-sm items-center gap-2 hover:bg-text-secondary"
-              key={index}
+              key={uuidv4()}
             >
               <ExternalLinkIcon className="stroke-text-tertiary h-2.5" />
               <p className="text-text-tertiary text-xs font-medium">
@@ -65,6 +66,6 @@ export const Experience: React.FC<ExperienceProps> = ({
           );
         })}
       </div>
-    </article>
+    </li>
   );
 };
