@@ -15,7 +15,7 @@ export const Message: React.FC<MessageProps> = ({
 }) => {
   return (
     <li
-      className={`p-3 flex flex-col gap-2 w-max max-w-[300px] rounded-sm ${
+      className={`p-3 flex flex-col gap-2 w-max max-w-[calc(100%*0.75)] rounded-sm ${
         isSender
           ? "self-end text-text-tertiary bg-text-primary"
           : "text-text-primary bg-base-tertiary"

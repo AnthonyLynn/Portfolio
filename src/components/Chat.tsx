@@ -42,7 +42,7 @@ export const Chat: React.FC<ChatProps> = ({
 
   return (
     <dialog
-      className="lg:absolute left-auto lg:right-4 lg:bottom-4 w-[380px] bg-transparent flex flex-col text-text-primary"
+      className="lg:absolute left-auto bottom-0 lg:right-4 lg:bottom-4 w-full lg:w-[380px] h-screen lg:h-auto bg-transparent flex flex-col text-text-primary"
       open
     >
       <div className="bg-base-tertiary flex justify-between p-3 rounded-t-md">
@@ -61,7 +61,7 @@ export const Chat: React.FC<ChatProps> = ({
         </button>
       </div>
       <div className="grow bg-base-primary">
-        <ul className="h-[512px] overflow-y-scroll p-1 scrollbar mr-1 flex flex-col gap-2">
+        <ul className="lg:h-[512px] overflow-y-scroll p-1 scrollbar mr-1 flex flex-col gap-2">
           {messageStack.map((message) => {
             return (
               <Message
@@ -88,7 +88,7 @@ export const Chat: React.FC<ChatProps> = ({
           )}
         </ul>
       </div>
-      <div className="p-2 rounded-b-md bg-base-tertiary">
+      <div className="p-2 lg:rounded-b-md bg-base-tertiary">
         <form
           className="rounded-sm bg-base-primary flex items-stretch justify-between"
           onSubmit={onSubmit}

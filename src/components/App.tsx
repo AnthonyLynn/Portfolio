@@ -109,7 +109,7 @@ export const App = ({}) => {
         <SkillSection />
         <ProjectSection />
       </main>
-      <div className="sticky z-10 w-full bottom-0 p-3 sm:p-4 lg:p-0 flex justify-end">
+      <div className="sticky z-50 w-full bottom-0 p-3 sm:p-4 lg:p-0 flex justify-end">
         {isModalOpen && (
           <Chat
             isLoadingResponse={isLoadingResponse}
