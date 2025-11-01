@@ -42,10 +42,10 @@ export const Chat: React.FC<ChatProps> = ({
 
   return (
     <dialog
-      className="lg:absolute left-auto bottom-0 lg:right-4 lg:bottom-4 w-full lg:w-[380px] h-screen lg:h-auto bg-transparent flex flex-col text-text-primary"
+      className="fixed lg:absolute left-auto bottom-0 lg:bottom-4 lg:right-4 top-0 lg:top-auto w-full h-full lg:h-auto lg:w-[380px] bg-transparent flex flex-col text-text-primary"
       open
     >
-      <div className="bg-base-tertiary flex justify-between p-3 rounded-t-md">
+      <div className="bg-base-tertiary flex justify-between p-3 lg:rounded-t-md">
         <figure className="flex items-center gap-3">
           <BotProfile
             backgroundClassName="w-8 bg-text-primary"
@@ -88,7 +88,7 @@ export const Chat: React.FC<ChatProps> = ({
           )}
         </ul>
       </div>
-      <div className="p-2 lg:rounded-b-md bg-base-tertiary">
+      <div className="p-2 pb-8 sm:pb-2 lg:rounded-b-md bg-base-tertiary">
         <form
           className="rounded-sm bg-base-primary flex items-stretch justify-between"
           onSubmit={onSubmit}

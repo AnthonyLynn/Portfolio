@@ -8,7 +8,7 @@ interface SkillProps {
 
 export const Skill: React.FC<SkillProps> = ({ logo, name, description }) => {
   return (
-    <article className="flex flex-col sm:flex-row items-center sm:items-start border border-base-tertiary rounded-md p-1.5 gap-2 sm:gap-3">
+    <li className="flex flex-col sm:flex-row items-center sm:items-start border border-base-tertiary rounded-md p-1.5 gap-2 sm:gap-3">
       <div className="bg-base-tertiary rounded-sm p-1.5">
         <img src={logo} alt={name} className="h-6 w-6 object-contain" />
       </div>
@@ -18,6 +18,6 @@ export const Skill: React.FC<SkillProps> = ({ logo, name, description }) => {
           {description}
         </p>
       </div>
-    </article>
+    </li>
   );
 };

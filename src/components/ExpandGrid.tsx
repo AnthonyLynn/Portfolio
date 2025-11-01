@@ -4,12 +4,14 @@ interface ExpandGridProps {
   children: ReactNode;
   rowAmount: number;
   initialRowsShown: number;
+  viewMoreAmount?: number;
 }
 
 export const ExpandGrid: React.FC<ExpandGridProps> = ({
   children,
   rowAmount,
   initialRowsShown,
+  viewMoreAmount,
 }) => {
   const childrenArray = Children.toArray(children);
 
@@ -26,7 +28,9 @@ export const ExpandGrid: React.FC<ExpandGridProps> = ({
   }
 
   function onShowMore() {
-    setAmountOfElementsShown(amountOfElementsShown + rowAmount);
+    setAmountOfElementsShown(
+      amountOfElementsShown + rowAmount * (viewMoreAmount || 1)
+    );
     updateShowMoreButton();
   }
 
