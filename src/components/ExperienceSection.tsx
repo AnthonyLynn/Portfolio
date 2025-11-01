@@ -1,5 +1,7 @@
 import AquariumReptileDenCompanyLogo from "../images/AquariumReptileDenCompanyLogo.png";
 import TripleTenLogo from "../images/TripleTenCompanyLogo.png";
+import ColdstoneCreameryLogo from "../images/ColdstoneCreameryLogo.png";
+import AcademyOfArtUniversityLogo from "../images/AcademyOfArtUniversityLogo.png";
 
 import React, { useState } from "react";
 import { Experience } from "./Experience";
@@ -72,10 +74,46 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({}) => {
               ]}
               externalLinks={[]}
             />
+            <Experience
+              institutionLogo={ColdstoneCreameryLogo}
+              beginDate={"May 2021"}
+              endDate={"Current"}
+              companyName={"Coldstone Creamery"}
+              roleTitle={"Assistant Manager"}
+              descriptions={[
+                "Manage store operations, train staff, and ensure customer satisfaction in a fast-paced environment.",
+                "Build leadership, teamwork, and problem-solving skills transferable to collaborative software development.",
+              ]}
+              externalLinks={[]}
+            />
             <div className="absolute -z-10 h-full w-px bg-base-tertiary left-10 top-0 hidden sm:inline"></div>
           </div>
         ) : (
           <div className="w-full shrink-0 flex flex-col gap-6">
+            <Experience
+              institutionLogo={TripleTenLogo}
+              beginDate={"May 2024"}
+              endDate={"Apr 2025"}
+              companyName={"TripleTen"}
+              roleTitle={"Full-Stack Software Engineer"}
+              descriptions={[
+                "Designed responsive UI elements using React and JavaScript based on Figma mock-ups.",
+                "Collaborated with multiple teams to develop front-end web applications within a weeks deadline.",
+              ]}
+              externalLinks={[]}
+            />
+            <Experience
+              institutionLogo={AcademyOfArtUniversityLogo}
+              beginDate={"2021"}
+              endDate={"2024"}
+              companyName={"Academy of Art University"}
+              roleTitle={"Game Design"}
+              descriptions={[
+                "Designed and built games in Unity and Unreal.",
+                "Used 3D and image editing software like Photoshop, Illustrator, Blender, and Maya.",
+              ]}
+              externalLinks={[]}
+            />
             <div className="absolute -z-10 h-full w-px bg-base-tertiary left-10 top-0 hidden sm:inline"></div>
           </div>
         )}
