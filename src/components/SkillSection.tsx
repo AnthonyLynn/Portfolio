@@ -3,6 +3,7 @@ import { skills } from "../utils/skills";
 
 import { Skill } from "./Skill";
 import { ExpandGrid } from "./ExpandGrid";
+import { uuidv4 } from "../utils/idGenerator";
 
 interface SkillSectionProps {}
 
@@ -17,6 +18,7 @@ export const SkillSection: React.FC<SkillSectionProps> = ({}) => {
               logo={skill.logo}
               name={skill.name}
               description={skill.description}
+              key={uuidv4()}
             />
           );
         })}
