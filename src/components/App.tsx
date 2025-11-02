@@ -24,6 +24,7 @@ export const App = ({}) => {
   >([{ role: "assistant", content: "Hi! What can I help you with?" }]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoadingResponse, setIsLoadingResponse] = useState(false);
+  const [isPulseActive, setIsPulseActive] = useState(true);
 
   let conversationId = localStorage.conversationId;
   if (!conversationId) {
@@ -76,6 +77,10 @@ export const App = ({}) => {
     localStorage.theme = isDarkTheme ? "light" : "dark";
   }
 
+  const onChatMouseEnter = () => {
+    setIsPulseActive(false);
+  };
+
   useEffect(() => {
     getConversations()
       .then(({ data }) => {
@@ -118,7 +123,13 @@ export const App = ({}) => {
             onModalClose={onModalClose}
           />
         )}
-        {!isModalOpen && <ChatButton onModalOpen={onModalOpen} />}
+        {!isModalOpen && (
+          <ChatButton
+            onModalOpen={onModalOpen}
+            onMouseEnter={onChatMouseEnter}
+            isPulseActive={isPulseActive}
+          />
+        )}
       </div>
       <Footer />
     </div>

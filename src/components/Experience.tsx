@@ -38,11 +38,11 @@ export const Experience: React.FC<ExperienceProps> = ({
             <h3 className="text-base font-bold">{companyName}</h3>
             <p className="text-sm text-text-secondary">{roleTitle}</p>
           </div>
-          <ul className="list-none sm:list-['•_'] flex flex-col gap-1 sm:gap-0 items-center sm:items-start">
+          <ul className="list-none sm:list-['•_'] flex flex-col gap-1 sm:gap-0 items-center sm:items-start px-2">
             {descriptions.map((description) => {
               return (
                 <li
-                  className="font-normal text-sm text-center sm:text-left px-2"
+                  className="font-normal text-sm text-center sm:text-left"
                   key={uuidv4()}
                 >
                   {description}
