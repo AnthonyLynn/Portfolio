@@ -42,7 +42,7 @@ export const Chat: React.FC<ChatProps> = ({
 
   return (
     <dialog
-      className="fixed lg:absolute left-auto bottom-0 lg:bottom-4 lg:right-4 top-0 lg:top-auto w-full h-[100dvh] lg:h-auto lg:w-[380px] bg-transparent flex flex-col text-text-primary"
+      className="fixed lg:absolute left-auto bottom-0 lg:bottom-4 lg:right-4 top-0 lg:top-auto w-full h-[100dvh] lg:h-auto lg:w-[380px] bg-base-primary flex flex-col text-text-primary"
       open
     >
       <div className="bg-base-tertiary flex justify-between p-3 lg:rounded-t-md">
@@ -60,34 +60,28 @@ export const Chat: React.FC<ChatProps> = ({
           <XIcon className="w-4 aspect-square fill-text-primary group-hover:fill-text-secondary" />
         </button>
       </div>
-      <div className="grow bg-base-primary">
-        <ul className="lg:h-[512px] overflow-y-scroll p-1 scrollbar mr-1 flex flex-col gap-2">
-          {messageStack.map((message) => {
-            return (
-              <Message
-                isSender={message.role === "user"}
-                shouldDisplayProfile={message.role === "assistant"}
-                key={uuidv4()}
-              >
-                <p className="text-xs">{message.content}</p>
-              </Message>
-            );
-          })}
-          {isLoadingResponse && (
+      <ul className="grow lg:h-[512px] overflow-y-scroll p-1 scrollbar mr-1 flex flex-col gap-2">
+        {messageStack.map((message) => {
+          return (
             <Message
-              isSender={false}
-              shouldDisplayProfile={false}
+              isSender={message.role === "user"}
+              shouldDisplayProfile={message.role === "assistant"}
               key={uuidv4()}
             >
-              <div className="flex gap-2">
-                <div className="w-2 aspect-square rounded-full bg-text-secondary"></div>
-                <div className="w-2 aspect-square rounded-full bg-text-secondary"></div>
-                <div className="w-2 aspect-square rounded-full bg-text-secondary"></div>
-              </div>
+              <p className="text-xs">{message.content}</p>
             </Message>
-          )}
-        </ul>
-      </div>
+          );
+        })}
+        {isLoadingResponse && (
+          <Message isSender={false} shouldDisplayProfile={false} key={uuidv4()}>
+            <div className="flex gap-2">
+              <div className="w-2 aspect-square rounded-full bg-text-secondary"></div>
+              <div className="w-2 aspect-square rounded-full bg-text-secondary"></div>
+              <div className="w-2 aspect-square rounded-full bg-text-secondary"></div>
+            </div>
+          </Message>
+        )}
+      </ul>
       <div className="p-2 pb-8 sm:pb-2 lg:rounded-b-md bg-base-tertiary">
         <form
           className="rounded-sm bg-base-primary flex items-stretch justify-between"
