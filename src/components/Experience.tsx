@@ -42,7 +42,7 @@ export const Experience: React.FC<ExperienceProps> = ({
             {descriptions.map((description) => {
               return (
                 <li
-                  className="font-normal text-sm text-center sm:text-left"
+                  className="font-normal text-sm text-center sm:text-left px-2"
                   key={uuidv4()}
                 >
                   {description}
