@@ -1,13 +1,15 @@
 import React, { FormEvent } from "react";
-import { uuidv4 } from "../utils/idGenerator";
+import { uuidv4 } from "../../utils/idGenerator";
 
-import { useForm } from "../hooks/useForm";
+import { useForm } from "../../hooks/useForm";
 
-import { BotProfile } from "./BotProfile";
-import { XIcon } from "./Icons/XIcon";
-import { ArrowIcon } from "./Icons/ArrowIcon";
+import { BotProfile } from "../BotProfile";
+import { XIcon } from "../Icons/XIcon";
+import { ArrowIcon } from "../Icons/ArrowIcon";
 
-import { Message } from "./Message";
+import { Message } from "../Message";
+
+import "./Chat.css";
 
 interface FromValues {
   message: string;
@@ -75,9 +77,9 @@ export const Chat: React.FC<ChatProps> = ({
         {isLoadingResponse && (
           <Message isSender={false} shouldDisplayProfile={false} key={uuidv4()}>
             <div className="flex gap-2">
-              <div className="w-2 aspect-square rounded-full bg-text-secondary"></div>
-              <div className="w-2 aspect-square rounded-full bg-text-secondary"></div>
-              <div className="w-2 aspect-square rounded-full bg-text-secondary"></div>
+              <div className="w-2 aspect-square rounded-full bg-text-secondary chat__dot_1"></div>
+              <div className="w-2 aspect-square rounded-full bg-text-secondary chat__dot_2"></div>
+              <div className="w-2 aspect-square rounded-full bg-text-secondary chat__dot_3"></div>
             </div>
           </Message>
         )}
