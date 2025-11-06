@@ -1,15 +1,13 @@
 import React, { FormEvent } from "react";
-import { uuidv4 } from "../../utils/idGenerator";
+import { uuidv4 } from "../utils/idGenerator";
 
-import { useForm } from "../../hooks/useForm";
+import { useForm } from "../hooks/useForm";
 
-import { BotProfile } from "../BotProfile";
-import { XIcon } from "../Icons/XIcon";
-import { ArrowIcon } from "../Icons/ArrowIcon";
+import { BotProfile } from "./BotProfile";
+import { XIcon } from "./Icons/XIcon";
+import { ArrowIcon } from "./Icons/ArrowIcon";
 
-import { Message } from "../Message";
-
-import "./Chat.css";
+import { Message } from "./Message";
 
 interface FromValues {
   message: string;
@@ -74,12 +72,18 @@ export const Chat: React.FC<ChatProps> = ({
             </Message>
           );
         })}
-        {isLoadingResponse && (
+        {!isLoadingResponse && (
           <Message isSender={false} shouldDisplayProfile={false} key={uuidv4()}>
             <div className="flex gap-2">
-              <div className="w-2 aspect-square rounded-full bg-text-secondary chat__dot_1"></div>
-              <div className="w-2 aspect-square rounded-full bg-text-secondary chat__dot_2"></div>
-              <div className="w-2 aspect-square rounded-full bg-text-secondary chat__dot_3"></div>
+              <div className="w-2 aspect-square rounded-full bg-text-secondary animate-delayed-bounce"></div>
+              <div
+                className="w-2 aspect-square rounded-full bg-text-secondary animate-delayed-bounce"
+                style={{ animationDelay: "0.5s" }}
+              ></div>
+              <div
+                className="w-2 aspect-square rounded-full bg-text-secondary animate-delayed-bounce"
+                style={{ animationDelay: "1s" }}
+              ></div>
             </div>
           </Message>
         )}

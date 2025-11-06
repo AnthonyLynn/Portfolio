@@ -9,7 +9,7 @@ import { SkillSection } from "./SkillSection";
 import { ProjectSection } from "./ProjectSection";
 import { Footer } from "./Footer";
 import { ChatButton } from "./ChatButton";
-import { Chat } from "./Chat/Chat";
+import { Chat } from "./Chat";
 import { uuidv4 } from "../utils/idGenerator";
 
 interface FromValues {
