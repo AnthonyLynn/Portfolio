@@ -72,7 +72,7 @@ export const Chat: React.FC<ChatProps> = ({
             </Message>
           );
         })}
-        {!isLoadingResponse && (
+        {isLoadingResponse && (
           <Message isSender={false} shouldDisplayProfile={false} key={uuidv4()}>
             <div className="flex gap-2">
               <div className="w-2 aspect-square rounded-full bg-text-secondary animate-delayed-bounce"></div>
