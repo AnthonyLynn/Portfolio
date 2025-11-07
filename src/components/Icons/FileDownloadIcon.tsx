@@ -1,10 +1,6 @@
-interface FileDownloadIconProps {
-  className: string;
-}
+import { IconProps } from "./Icon";
 
-export const FileDownloadIcon: React.FC<FileDownloadIconProps> = ({
-  className,
-}) => {
+export const FileDownloadIcon: React.FC<IconProps> = ({ className }) => {
   return (
     <svg viewBox="0 0 10 12" className={`stroke-none ${className}`}>
       <path d="M6.09648 0H1.27718C0.572673 0 0 0.573071 0 1.27718V10.7228C0 11.4269 0.572673 12 1.27718 12H7.853C8.55672 12 9.13019 11.4269 9.13019 10.7228V3.02275L6.09648 0ZM7.853 11.2175H1.27718C1.00415 11.2175 0.782115 10.9958 0.782115 10.7228V1.27718C0.782115 1.00457 1.00415 0.782936 1.27718 0.782936L5.80386 0.778232V2.45123C5.80386 2.94037 6.20082 3.33735 6.68959 3.33735L8.32923 3.33265L8.34728 10.7228C8.34728 10.9958 8.12604 11.2175 7.853 11.2175Z" />

@@ -1,10 +1,6 @@
-interface ExternalLinkIconProps {
-  className: string;
-}
+import { IconProps } from "./Icon";
 
-export const ExternalLinkIcon: React.FC<ExternalLinkIconProps> = ({
-  className,
-}) => {
+export const ExternalLinkIcon: React.FC<IconProps> = ({ className }) => {
   return (
     <svg viewBox="0 0 12 12" className={`fill-none ${className}`}>
       <path

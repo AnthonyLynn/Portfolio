@@ -1,8 +1,6 @@
-interface MoonIconProps {
-  className: string;
-}
+import { IconProps } from "./Icon";
 
-export const MoonIcon: React.FC<MoonIconProps> = ({ className }) => {
+export const MoonIcon: React.FC<IconProps> = ({ className }) => {
   return (
     <svg viewBox="0 0 11 14" className={className}>
       <path

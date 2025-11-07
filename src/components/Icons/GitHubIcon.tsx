@@ -1,8 +1,6 @@
-interface GitHubIconProps {
-  className: string;
-}
+import { IconProps } from "./Icon";
 
-export const GitHubIcon: React.FC<GitHubIconProps> = ({ className }) => {
+export const GitHubIcon: React.FC<IconProps> = ({ className }) => {
   return (
     <svg viewBox="0 0 13 14" className={`fill-none ${className}`}>
       <path

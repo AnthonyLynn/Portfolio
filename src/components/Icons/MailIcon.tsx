@@ -1,8 +1,6 @@
-interface MailIconProps {
-  className: string;
-}
+import { IconProps } from "./Icon";
 
-export const MailIcon: React.FC<MailIconProps> = ({ className }) => {
+export const MailIcon: React.FC<IconProps> = ({ className }) => {
   return (
     <svg viewBox="0 0 19 14" className={`fill-none ${className}`}>
       <path

@@ -6,9 +6,7 @@ import AcademyOfArtUniversityLogo from "../images/AcademyOfArtUniversityLogo.png
 import React, { useState } from "react";
 import { Experience } from "./Experience";
 
-interface ExperienceSectionProps {}
-
-export const ExperienceSection: React.FC<ExperienceSectionProps> = ({}) => {
+export const ExperienceSection: React.FC = () => {
   const [showExperience, setShowExperience] = useState<boolean>(true);
 
   function onExperienceToggle() {

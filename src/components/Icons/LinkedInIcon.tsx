@@ -1,8 +1,6 @@
-interface LinkedInIconProps {
-  className: string;
-}
+import { IconProps } from "./Icon";
 
-export const LinkedInIcon: React.FC<LinkedInIconProps> = ({ className }) => {
+export const LinkedInIcon: React.FC<IconProps> = ({ className }) => {
   return (
     <svg viewBox="0 0 14 14" className={`fill-none ${className}`}>
       <path

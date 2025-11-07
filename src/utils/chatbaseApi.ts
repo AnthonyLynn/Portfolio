@@ -1,5 +1,17 @@
 import { chatbotId, apiUrl, apiKey } from "./constants.js";
 
+interface APIMessage {
+  message: string;
+  conversationId: string;
+}
+
+interface APIConversation {
+  id: string;
+  messages: { role: Role; content: string }[];
+}
+
+type Role = "user" | "assistant";
+
 function getResult(res: Response) {
   if (res.ok) {
     return res.json();
@@ -9,11 +21,6 @@ function getResult(res: Response) {
 
 export function request(url: RequestInfo | URL, options?: RequestInit) {
   return fetch(url, options).then(getResult);
-}
-
-interface APIMessage {
-  message: string;
-  conversationId: string;
 }
 
 export function sendChatBotMessage({
@@ -39,11 +46,7 @@ export function sendChatBotMessage({
   });
 }
 
-type Role = "user" | "assistant";
-
-export function getConversations(): Promise<{
-  data: { id: string; messages: { role: Role; content: string }[] }[];
-}> {
+export function getConversations(): Promise<{ data: APIConversation[] }> {
   return request(
     `${apiUrl}/get-conversations?chatbotId=${chatbotId}&filteredSources=API`,
     {

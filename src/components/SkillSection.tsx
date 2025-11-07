@@ -5,9 +5,7 @@ import { Skill } from "./Skill";
 import { ExpandGrid } from "./ExpandGrid";
 import { uuidv4 } from "../utils/idGenerator";
 
-interface SkillSectionProps {}
-
-export const SkillSection: React.FC<SkillSectionProps> = ({}) => {
+export const SkillSection: React.FC = () => {
   return (
     <section className="flex flex-col gap-2" id="skills">
       <h2 className="text-xl font-bold">Skills</h2>

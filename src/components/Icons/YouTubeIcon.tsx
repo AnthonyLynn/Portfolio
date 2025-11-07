@@ -1,8 +1,6 @@
-interface YouTubeIconProps {
-  className: string;
-}
+import { IconProps } from "./Icon";
 
-export const YouTubeIcon: React.FC<YouTubeIconProps> = ({ className }) => {
+export const YouTubeIcon: React.FC<IconProps> = ({ className }) => {
   return (
     <svg viewBox="0 0 18 14" className={`fill-none ${className}`}>
       <path

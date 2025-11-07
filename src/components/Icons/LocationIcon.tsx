@@ -1,8 +1,6 @@
-interface LocationIconProps {
-  className: string;
-}
+import { IconProps } from "./Icon";
 
-export const LocationIcon: React.FC<LocationIconProps> = ({ className }) => {
+export const LocationIcon: React.FC<IconProps> = ({ className }) => {
   return (
     <svg viewBox="0 0 11 14" className={`fill-none ${className}`}>
       <path

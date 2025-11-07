@@ -18,13 +18,18 @@ interface FromValues {
 
 type Role = "user" | "assistant";
 
-export const App = ({}) => {
+export const App = () => {
   const [messageStack, setMessageStack] = useState<
     { role: Role; content: string }[]
   >([{ role: "assistant", content: "Hi! What can I help you with?" }]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoadingResponse, setIsLoadingResponse] = useState(false);
   const [isPulseActive, setIsPulseActive] = useState(true);
+  const [isDarkTheme, setIsDarkTheme] = useState(
+    localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+  );
 
   let conversationId = localStorage.conversationId;
   if (!conversationId) {
@@ -65,12 +70,6 @@ export const App = ({}) => {
   const onModalOpen = () => {
     setIsModalOpen(true);
   };
-
-  const [isDarkTheme, setIsDarkTheme] = useState(
-    localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-  );
 
   function onThemeChange() {
     setIsDarkTheme(!isDarkTheme);

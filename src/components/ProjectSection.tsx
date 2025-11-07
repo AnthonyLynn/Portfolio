@@ -7,9 +7,7 @@ import useWindowWidth from "../hooks/useWindowWidth";
 
 import { projects } from "../utils/projects";
 
-interface ProjectSectionProps {}
-
-export const ProjectSection: React.FC<ProjectSectionProps> = ({}) => {
+export const ProjectSection: React.FC = () => {
   const width = useWindowWidth();
 
   return (

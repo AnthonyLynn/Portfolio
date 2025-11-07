@@ -4,9 +4,7 @@ import { LinkedInIcon } from "./Icons/LinkedInIcon";
 import { GitHubIcon } from "./Icons/GitHubIcon";
 import { MailIcon } from "./Icons/MailIcon";
 
-interface FooterProps {}
-
-export const Footer: React.FC<FooterProps> = ({}) => {
+export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (

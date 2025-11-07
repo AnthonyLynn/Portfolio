@@ -8,9 +8,7 @@ import Resume from "../Resume.pdf";
 
 import React from "react";
 
-interface AboutProps {}
-
-export const About: React.FC<AboutProps> = ({}) => {
+export const About: React.FC = () => {
   return (
     <section
       className="flex flex-col-reverse sm:flex-row py-8 sm:py-10 justify-center gap-2 sm:gap-10 items-center sm:items-stretch"
