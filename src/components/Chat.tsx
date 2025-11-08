@@ -1,4 +1,4 @@
-import React, { FormEvent } from "react";
+import React, { FormEvent, useState } from "react";
 import { uuidv4 } from "../utils/idGenerator";
 
 import { useForm } from "../hooks/useForm";
@@ -28,12 +28,30 @@ export const Chat: React.FC<ChatProps> = ({
   onMessageSent,
   onModalClose,
 }) => {
+  const [inputHasAnimation, setInputHasAnimation] = useState(false);
+
   const { values, handleChange, setValues } = useForm<FromValues>({
     message: "",
   });
 
+  const playErrorInputAnimation = () => {
+    if (inputHasAnimation) {
+      return;
+    }
+
+    setInputHasAnimation(true);
+    setTimeout(() => {
+      setInputHasAnimation(false);
+    }, 1500);
+  };
+
   const onSubmit = (evt: FormEvent) => {
     evt.preventDefault();
+
+    if (values.message === "") {
+      return playErrorInputAnimation();
+    }
+
     setValues({
       message: "",
     });
@@ -93,15 +111,26 @@ export const Chat: React.FC<ChatProps> = ({
           className="rounded-sm bg-base-primary flex items-stretch justify-between"
           onSubmit={onSubmit}
         >
-          <input
-            type="text"
-            placeholder="Type message..."
-            className="placeholder:text-text-secondary text-text-primary text-xs p-3 grow"
-            onChange={handleChange}
-            name="message"
-            value={values.message || ""}
-            required
-          />
+          <span className="relative grow">
+            <input
+              type="text"
+              className="input-text text-xs p-3 w-full peer"
+              placeholder=" "
+              onChange={handleChange}
+              name="message"
+              id="message"
+              value={values.message || ""}
+            />
+            <label
+              htmlFor="message"
+              className={`absolute top-0 left-0 text-text-secondary text-xs p-3 w-full peer-[:not(:placeholder-shown)]:hidden hover:cursor-text ${
+                inputHasAnimation && "animate-error"
+              }`}
+            >
+              Type message...
+            </label>
+          </span>
+
           <button
             type="submit"
             className="hover:cursor-pointer flex justify-center items-center px-3 group"
