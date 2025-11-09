@@ -23,6 +23,7 @@ export const App = () => {
     { role: Role; content: string }[]
   >([{ role: "assistant", content: "Hi! What can I help you with?" }]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isChatEnabled, setIsChatEnabled] = useState(true);
   const [isLoadingResponse, setIsLoadingResponse] = useState(false);
   const [isPulseActive, setIsPulseActive] = useState(true);
   const [isDarkTheme, setIsDarkTheme] = useState(
@@ -44,6 +45,21 @@ export const App = () => {
     ]);
   };
 
+  const addErrorMessage = () => {
+    addMessage(
+      "assistant",
+      "I'm currently unavailable, please try again later and email Anthony any questions you have."
+    );
+  };
+
+  const handleApiError = (errorMessage: string) => {
+    if (isChatEnabled) {
+      setIsChatEnabled(false);
+    }
+    addErrorMessage();
+    console.log(errorMessage);
+  };
+
   const onMessageSent = ({ message }: FromValues) => {
     addMessage("user", message);
     setIsLoadingResponse(true);
@@ -53,11 +69,10 @@ export const App = () => {
       conversationId: conversationId,
     })
       .then(({ text }) => {
+        setIsChatEnabled(true);
         addMessage("assistant", text);
       })
-      .catch((errorMessage: string) => {
-        console.log(errorMessage);
-      })
+      .catch(handleApiError)
       .finally(() => {
         setIsLoadingResponse(false);
       });
@@ -97,7 +112,7 @@ export const App = () => {
 
         setMessageStack(conversationData);
       })
-      .catch(console.error);
+      .catch(handleApiError);
   }, []);
 
   return (
@@ -118,6 +133,7 @@ export const App = () => {
           <Chat
             isLoadingResponse={isLoadingResponse}
             messageStack={messageStack}
+            isEnabled={isChatEnabled}
             onMessageSent={onMessageSent}
             onModalClose={onModalClose}
           />

@@ -18,6 +18,7 @@ type Role = "user" | "assistant";
 interface ChatProps {
   messageStack: { role: Role; content: string }[];
   isLoadingResponse: boolean;
+  isEnabled: boolean;
   onMessageSent: ({}: FromValues) => void;
   onModalClose: () => void;
 }
@@ -25,6 +26,7 @@ interface ChatProps {
 export const Chat: React.FC<ChatProps> = ({
   messageStack,
   isLoadingResponse,
+  isEnabled,
   onMessageSent,
   onModalClose,
 }) => {
@@ -60,7 +62,9 @@ export const Chat: React.FC<ChatProps> = ({
 
   return (
     <dialog
-      className="fixed lg:absolute left-auto bottom-0 lg:bottom-4 lg:right-4 top-0 lg:top-auto w-full h-[100dvh] lg:h-auto lg:w-[380px] bg-base-primary flex flex-col text-text-primary"
+      className={`fixed lg:absolute left-auto bottom-0 lg:bottom-4 lg:right-4 top-0 lg:top-auto w-full h-[100dvh] lg:h-auto lg:w-[380px] bg-base-primary flex flex-col text-text-primary lg:rounded-lg ${
+        !isEnabled && "border-2 border-red-500"
+      }`}
       open
     >
       <div className="bg-base-tertiary flex justify-between p-3 lg:rounded-t-md">
