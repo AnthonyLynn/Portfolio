@@ -48,7 +48,7 @@ export const App = () => {
   const addErrorMessage = () => {
     addMessage(
       "assistant",
-      "I'm currently unavailable, please try again later and email Anthony any questions you have."
+      "I'm currently unavailable, please try again later and email Anthony at anthonywlynn2002@gmail.com for any questions you might have."
     );
   };
 
@@ -94,7 +94,7 @@ export const App = () => {
   const onChatMouseEnter = () => {
     setIsPulseActive(false);
   };
-
+  /*
   useEffect(() => {
     getConversations()
       .then(({ data }) => {
@@ -114,6 +114,7 @@ export const App = () => {
       })
       .catch(handleApiError);
   }, []);
+  */
 
   return (
     <div
@@ -122,13 +123,13 @@ export const App = () => {
       }`}
     >
       <Header onThemeButtonClick={onThemeChange} isDarkTheme={isDarkTheme} />
-      <main className="w-full md:max-w-[640px] px-3 sm:px-4 md:px-0 lg:pb-8 flex flex-col gap-4 sm:gap-7">
+      <main className="w-full md:max-w-[720px] px-3 sm:px-4 md:px-0 lg:pb-8 flex flex-col gap-4 sm:gap-7 mt-4">
         <About />
         <ExperienceSection />
         <SkillSection />
         <ProjectSection />
       </main>
-      <div className="sticky z-50 w-full bottom-0 p-3 sm:p-4 lg:p-0 flex justify-end">
+      {/*<div className="sticky z-50 w-full bottom-0 p-3 sm:p-4 lg:p-0 flex justify-end">
         {isModalOpen && (
           <Chat
             isLoadingResponse={isLoadingResponse}
@@ -145,7 +146,7 @@ export const App = () => {
             isPulseActive={isPulseActive}
           />
         )}
-      </div>
+      </div>*/}
       <Footer />
     </div>
   );

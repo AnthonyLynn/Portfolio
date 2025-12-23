@@ -19,16 +19,16 @@ export const projects: Project[] = [
     image: MakeASharkScreenshot,
     title: "Make a Shark",
     description:
-      "Educational app featuring sharks; made for an externship with 6 other developers using Agile.",
-    skills: ["React.js", "TypeScript", "Vitest", "Storybook"],
+      "Interactive educational application that teaches young users about sharks and their habitats.",
+    skills: ["React", "TypeScript", "Vitest", "Storybook"],
     websiteLink: "https://d2iglzmdn49e7r.cloudfront.net",
   },
   {
     image: NewsAppScreenshot,
     title: "News Explorer",
     description:
-      "Front-end news site using React and JavaScript to search and save news articles.",
-    skills: ["React.js", "JavaScript", "News API"],
+      "Website allowing users to find an endless amount of current news articles using user entered keywords. Additionally allows for the saving of these articles for later reading.",
+    skills: ["React", "JavaScript", "News API"],
     websiteLink: "https://anthonylynn.github.io/NewsApp",
     demoLink: "https://youtu.be/_pOs_k1a9pI",
     gitHubLink: "https://github.com/AnthonyLynn/NewsApp",
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     image: LoverCodeJamzScreenshot,
     title: "Lovers Code Jamz",
     description:
-      "Front-end site where I built a carousel of popular restaurants to visit.",
+      "Website for planning the perfect date made for a 5 day team competition. Developed the restaurant carousel listing top 100 restaurants in the US, ordered by distance form user. Won 1st in design, presentation, and technical execution.",
     skills: ["HTML5", "JavaScript", "CSS3"],
     websiteLink: "https://jmik-thang.github.io/Lover-s-Slow-Jamz/",
     demoLink: "https://youtu.be/EM-qUf7j-ak",
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     image: ReactionRunawayScreenshot,
     title: "Reaction Runaway",
     description:
-      "Game made in a 3.5 day game jam for the Roblox Developer Challenge 2023.",
+      "Game made in a 3.5 day game jam for the 2023 Roblox Developer Challenge. Features a user controlled player that can shoot electricity to solve puzzles.",
     skills: ["Roblox Studio", "Luau"],
     websiteLink: "https://www.roblox.com/games/12812459785/Reaction-Runaway",
     demoLink: "https://youtu.be/jt19Wdh4IlE",
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     image: SpellCodingScreenshot,
     title: "Spell Coding",
     description:
-      "Commission project showcasing 25 different spells from the Harry Potter Series. UI design not made by me, but I did make it functional.",
+      "Commission project showcasing 25 different spells from the Harry Potter Series. Made UI functional, projectiles and their functional effects, and other small things like the hit cursor.",
     skills: ["Roblox Studio", "Luau"],
     websiteLink: "https://www.roblox.com/games/12707118089/SpellCoding",
     demoLink: "https://youtu.be/GUmZ-yoSqIs",

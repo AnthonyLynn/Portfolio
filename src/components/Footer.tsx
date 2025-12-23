@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="w-full bg-base-primary flex justify-center">
-      <div className="flex justify-between w-full md:w-[640px] p-4 px-3 sm:px-4 md:px-0 items-center">
+      <div className="flex justify-between w-full md:w-[720px] p-4 px-3 sm:px-4 md:px-0 items-center">
         <p className="font-medium text-xs text-text-secondary">
           &copy; {currentYear} anthony-lynn.com
         </p>

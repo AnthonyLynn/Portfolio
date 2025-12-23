@@ -1,6 +1,7 @@
 import AquariumReptileDenCompanyLogo from "../images/AquariumReptileDenCompanyLogo.png";
 import TripleTenLogo from "../images/TripleTenCompanyLogo.png";
-import ColdstoneCreameryLogo from "../images/ColdstoneCreameryLogo.png";
+import FreelanceLogo from "../images/FreelanceLogo.svg";
+import ColdStoneCreameryLogo from "../images/ColdStoneCreameryLogo.png";
 import AcademyOfArtUniversityLogo from "../images/AcademyOfArtUniversityLogo.png";
 
 import React, { useState } from "react";
@@ -43,15 +44,28 @@ export const ExperienceSection: React.FC = () => {
         {showExperience ? (
           <>
             <Experience
+              institutionLogo={FreelanceLogo}
+              beginDate={"Jan 2020"}
+              endDate={"Present"}
+              companyName={"Freelance"}
+              roleTitle={"Software Engineer"}
+              descriptions={[
+                "Developed React applications with Typescript and Tailwind CSS based on Figma mockups, delivering pixel perfect responsive design across different devices.",
+                "Integrating third-party REST APIs with custom hooks and context APIs, improving user engagement and satisfaction.",
+                "Recognized for rapidly delivering high-quality applications under tight deadlines, contributing to project success and wins during code jams and sprints.",
+              ]}
+              externalLinks={[]}
+            />
+            <Experience
               institutionLogo={AquariumReptileDenCompanyLogo}
               beginDate={"Jun 2025"}
               endDate={"Aug 2025"}
               companyName={"Electric City Aquarium & Reptile Den"}
               roleTitle={"Front-End Software Engineer"}
               descriptions={[
-                "Developed React components with Tailwind CSS and Typescript based on Figma mockups, delivering clean UI and smooth user experiences.",
-                "Collaborated in a team of 7 software engineers using Git, Jira, and Agile methodologies; effectively delivering a product in less than 3 months.",
-                "Created storybooks and unit tested with Vitest to ensure quality.",
+                "Streamlined development workflows by documenting and testing UI with Storybook, creating a catalog of reusable components with consistent design and reducing development time.",
+                "Wrote unit tests with Vitest, achieving 80% test coverage and reducing production bugs, increasing the confidence of stakeholders in the product.",
+                "Improved team efficiency by collaborating in an Agile environment using Jira and GitHub, meeting sprint goals and exceeding stakeholder expectations.",
               ]}
               externalLinks={[
                 {
@@ -61,26 +75,15 @@ export const ExperienceSection: React.FC = () => {
               ]}
             />
             <Experience
-              institutionLogo={TripleTenLogo}
-              beginDate={"May 2024"}
-              endDate={"Apr 2025"}
-              companyName={"TripleTen"}
-              roleTitle={"Full-Stack Software Engineer"}
-              descriptions={[
-                "Designed responsive UI elements using React and JavaScript based on Figma mock-ups.",
-                "Collaborated with multiple teams to develop front-end web applications within a weeks deadline.",
-              ]}
-              externalLinks={[]}
-            />
-            <Experience
-              institutionLogo={ColdstoneCreameryLogo}
+              institutionLogo={ColdStoneCreameryLogo}
               beginDate={"May 2021"}
               endDate={"Current"}
-              companyName={"Coldstone Creamery"}
+              companyName={"ColdStone Creamery"}
               roleTitle={"Assistant Manager"}
               descriptions={[
-                "Manage store operations, train staff, and ensure customer satisfaction in a fast-paced environment.",
-                "Build leadership, teamwork, and problem-solving skills transferable to collaborative software development.",
+                "Took ownership of overseeing daily operations in a fast paced environment, ensuring smooth execution, and improving customer satisfaction.",
+                "Mentored and guided team members in daily activities and practices, fostering a collaborative and high-functioning team.",
+                "Built leadership, teamwork, and problem-solving skills transferable to collaborative software development.",
               ]}
               externalLinks={[]}
             />
@@ -89,13 +92,13 @@ export const ExperienceSection: React.FC = () => {
           <>
             <Experience
               institutionLogo={TripleTenLogo}
-              beginDate={"May 2024"}
-              endDate={"Apr 2025"}
+              beginDate={"2024"}
+              endDate={"2025"}
               companyName={"TripleTen"}
               roleTitle={"Full-Stack Software Engineer"}
               descriptions={[
-                "Designed responsive UI elements using React and JavaScript based on Figma mock-ups.",
-                "Collaborated with multiple teams to develop front-end web applications within a weeks deadline.",
+                "Developed basic HTML and CSS websites using best practices, like responsive and accessible design for increased user support.",
+                "Built Full-Stack projects through google cloud allowing for more feature rich applications.",
               ]}
               externalLinks={[]}
             />
@@ -106,8 +109,8 @@ export const ExperienceSection: React.FC = () => {
               companyName={"Academy of Art University"}
               roleTitle={"Game Design"}
               descriptions={[
-                "Designed and built games in Unity and Unreal.",
-                "Used 3D and image editing software like Photoshop, Illustrator, Blender, and Maya.",
+                "Designed and developed user experiences using Unity and Unreal, focusing on creating a good player experience.",
+                "Created 3D models and images using editing software like Photoshop, Illustrator, Blender, and Maya.",
               ]}
               externalLinks={[]}
             />
