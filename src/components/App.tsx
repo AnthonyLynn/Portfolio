@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { /*useEffect,*/ useState } from "react";
 
-import { sendChatBotMessage, getConversations } from "../utils/chatbaseApi";
+//import { sendChatBotMessage, getConversations } from "../utils/chatbaseApi";
 
 import { Header } from "./Header";
 import { About } from "./About";
@@ -8,36 +8,44 @@ import { ExperienceSection } from "./ExperienceSection";
 import { SkillSection } from "./SkillSection";
 import { ProjectSection } from "./ProjectSection";
 import { Footer } from "./Footer";
-import { ChatButton } from "./ChatButton";
-import { Chat } from "./Chat";
+//import { ChatButton } from "./ChatButton";
+//import { Chat } from "./Chat";
 import { uuidv4 } from "../utils/idGenerator";
-
+/*
 interface FromValues {
   message: string;
 }
 
 type Role = "user" | "assistant";
-
+*/
 export const App = () => {
+  /*
   const [messageStack, setMessageStack] = useState<
     { role: Role; content: string }[]
   >([{ role: "assistant", content: "Hi! What can I help you with?" }]);
+  
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isChatEnabled, setIsChatEnabled] = useState(true);
   const [isLoadingResponse, setIsLoadingResponse] = useState(false);
   const [isPulseActive, setIsPulseActive] = useState(true);
+  */
   const [isDarkTheme, setIsDarkTheme] = useState(
     localStorage.theme === "dark" ||
       (!("theme" in localStorage) &&
         window.matchMedia("(prefers-color-scheme: dark)").matches)
   );
 
+  function onThemeChange() {
+    setIsDarkTheme(!isDarkTheme);
+    localStorage.theme = isDarkTheme ? "light" : "dark";
+  }
+
   let conversationId = localStorage.conversationId;
   if (!conversationId) {
     conversationId = uuidv4();
     localStorage.conversationId = conversationId;
   }
-
+  /*
   const addMessage = (role: Role, message: string) => {
     setMessageStack((messageStack) => [
       ...messageStack,
@@ -86,15 +94,10 @@ export const App = () => {
     setIsModalOpen(true);
   };
 
-  function onThemeChange() {
-    setIsDarkTheme(!isDarkTheme);
-    localStorage.theme = isDarkTheme ? "light" : "dark";
-  }
-
   const onChatMouseEnter = () => {
     setIsPulseActive(false);
   };
-  /*
+  
   useEffect(() => {
     getConversations()
       .then(({ data }) => {
