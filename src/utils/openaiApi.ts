@@ -1,5 +1,15 @@
 import { apiUrl, apiKey } from "./constants.js";
 
+type APIOutput = {
+  id: string;
+  type: string;
+  status: "in_progress" | "completed" | "incomplete";
+  content: {
+    text: string;
+  }[];
+  role: string;
+}[];
+
 function getResult(res: Response) {
   if (res.ok) {
     return res.json();
@@ -11,7 +21,7 @@ function request(url: RequestInfo | URL, options?: RequestInit) {
   return fetch(url, options).then(getResult);
 }
 
-export function createConversation() {
+export function createConversation(): Promise<{ id: string }> {
   return request(`${apiUrl}/conversations`, {
     method: "POST",
     headers: {
@@ -25,11 +35,19 @@ export function createResponse({
   modelId,
   conversationId,
   promptId,
+  input,
 }: {
   modelId: string;
-  conversationId: string | undefined;
-  promptId: string | undefined;
-}) {
+  conversationId?: string;
+  promptId?: string;
+  input?: string;
+}): Promise<{ output: APIOutput }> {
+  if (!(input || promptId)) {
+    return Promise.reject(
+      `Error: createResponse function must receive input or promptId`
+    );
+  }
+
   return request(`${apiUrl}/responses`, {
     method: "POST",
     headers: {
@@ -44,6 +62,7 @@ export function createResponse({
         }) ||
         undefined,
       conversation: conversationId,
+      input: input,
     }),
   });
 }
@@ -52,7 +71,7 @@ export function getConversationItems({
   conversationId,
 }: {
   conversationId: string;
-}) {
+}): Promise<{ data: APIOutput }> {
   return request(`${apiUrl}/conversations/${conversationId}/items&order=asc`, {
     method: "GET",
     headers: {

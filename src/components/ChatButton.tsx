@@ -15,7 +15,7 @@ export const ChatButton: React.FC<ChatButtonProps> = ({
 }) => {
   return (
     <button
-      className="absolute bottom-4 right-4 w-16 aspect-square bg-base-tertiary hover:bg-base-primary rounded-full flex justify-center pt-4.5 hover:cursor-pointer group"
+      className="absolute bottom-4 sm:right-4 w-16 aspect-square bg-base-tertiary hover:bg-base-primary rounded-full flex justify-center pt-4.5 hover:cursor-pointer group"
       onClick={onModalOpen}
       onMouseEnter={onMouseEnter}
     >
