@@ -22,6 +22,7 @@ function request(url: RequestInfo | URL, options?: RequestInit) {
 }
 
 export function createConversation(): Promise<{ id: string }> {
+  console.log(apiKey);
   return request(`${apiUrl}/conversations`, {
     method: "POST",
     headers: {
