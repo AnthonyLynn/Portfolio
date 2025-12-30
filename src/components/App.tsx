@@ -133,7 +133,6 @@ export const App = () => {
 
     getConversationItems({ conversationId: conversationId })
       .then(({ data }) => {
-        console.log(data);
         data.forEach(({ content, role }) => {
           if (role !== "user" && role !== "assistant") {
             return;
