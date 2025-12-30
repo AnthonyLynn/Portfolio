@@ -72,7 +72,7 @@ export function getConversationItems({
 }: {
   conversationId: string;
 }): Promise<{ data: APIOutput }> {
-  return request(`${apiUrl}/conversations/${conversationId}/items&order=asc`, {
+  return request(`${apiUrl}/conversations/${conversationId}/items?order=asc`, {
     method: "GET",
     headers: {
       authorization: `Bearer ${apiKey}`,

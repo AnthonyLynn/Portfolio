@@ -15,7 +15,6 @@ import { ProjectSection } from "./ProjectSection";
 import { Footer } from "./Footer";
 import { ChatButton } from "./ChatButton";
 import { Chat } from "./Chat";
-import { uuidv4 } from "../utils/idGenerator";
 
 type Role = "user" | "assistant";
 
@@ -78,11 +77,11 @@ export const App = () => {
       .catch(handleApiError);
   };
 
-  const createNewResponse = (message: string, prompt: boolean) => {
+  const createNewResponse = (message: string) => {
     createResponse({
       modelId: modelId,
       conversationId: conversationId,
-      promptId: (prompt && promptId) || undefined,
+      promptId: promptId,
       input: message,
     })
       .then(({ output }) => {
@@ -109,9 +108,9 @@ export const App = () => {
 
     if (!conversationId) {
       createNewConversation();
-      createNewResponse(message, true);
+      createNewResponse(message);
     } else {
-      createNewResponse(message, false);
+      createNewResponse(message);
     }
   };
 
@@ -134,6 +133,7 @@ export const App = () => {
 
     getConversationItems({ conversationId: conversationId })
       .then(({ data }) => {
+        console.log(data);
         data.forEach(({ content, role }) => {
           if (role !== "user" && role !== "assistant") {
             return;

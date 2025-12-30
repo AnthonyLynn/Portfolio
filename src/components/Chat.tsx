@@ -1,12 +1,12 @@
-import React, { FormEvent, useState } from "react";
-import { uuidv4 } from "../utils/idGenerator";
+import React, { FormEvent, useState, useEffect, useRef } from "react";
+import ReactMarkdown from "react-markdown";
 
+import { uuidv4 } from "../utils/idGenerator";
 import { useForm } from "../hooks/useForm";
 
 import { BotProfile } from "./BotProfile";
 import { XIcon } from "./Icons/XIcon";
 import { ArrowIcon } from "./Icons/ArrowIcon";
-
 import { Message } from "./Message";
 
 interface FromValues {
@@ -31,7 +31,7 @@ export const Chat: React.FC<ChatProps> = ({
   onModalClose,
 }) => {
   const [inputHasAnimation, setInputHasAnimation] = useState(false);
-
+  const messagesEndRef = useRef<null | HTMLDivElement>(null);
   const { values, handleChange, setValues } = useForm<FromValues>({
     message: "",
   });
@@ -60,6 +60,14 @@ export const Chat: React.FC<ChatProps> = ({
     onMessageSent(values);
   };
 
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messageStack]);
+
   return (
     <dialog
       className={`fixed lg:absolute left-auto bottom-0 lg:bottom-4 lg:right-4 top-0 lg:top-auto w-full h-[100dvh] lg:h-auto lg:w-[380px] bg-base-primary flex flex-col text-text-primary lg:rounded-lg ${
@@ -82,34 +90,51 @@ export const Chat: React.FC<ChatProps> = ({
           <XIcon className="w-4 aspect-square fill-text-primary group-hover:fill-text-secondary" />
         </button>
       </div>
-      <ul className="grow lg:h-[512px] overflow-y-scroll p-1 scrollbar mr-1 flex flex-col gap-2">
-        {messageStack.map((message) => {
-          return (
+      <div className="grow lg:h-[512px] overflow-y-scroll p-1 scrollbar mr-1">
+        <ul className="flex flex-col gap-2">
+          {messageStack.map((message) => {
+            const isSender = message.role === "user";
+
+            return (
+              <Message
+                isSender={isSender}
+                shouldDisplayProfile={message.role === "assistant"}
+                key={uuidv4()}
+              >
+                <article
+                  className={`text-xs prose ${
+                    isSender
+                      ? "text-text-tertiary prose-strong:text-text-tertiary prose-li:text-text-tertiary"
+                      : "text-text-primary prose-strong:text-text-primary prose-li:marker:text-text-primary"
+                  }`}
+                >
+                  <ReactMarkdown>{message.content}</ReactMarkdown>
+                </article>
+              </Message>
+            );
+          })}
+          {isLoadingResponse && (
             <Message
-              isSender={message.role === "user"}
-              shouldDisplayProfile={message.role === "assistant"}
+              isSender={false}
+              shouldDisplayProfile={false}
               key={uuidv4()}
             >
-              <p className="text-xs">{message.content}</p>
+              <div className="flex gap-2">
+                <div className="w-2 aspect-square rounded-full bg-text-secondary animate-delayed-bounce"></div>
+                <div
+                  className="w-2 aspect-square rounded-full bg-text-secondary animate-delayed-bounce"
+                  style={{ animationDelay: "0.5s" }}
+                ></div>
+                <div
+                  className="w-2 aspect-square rounded-full bg-text-secondary animate-delayed-bounce"
+                  style={{ animationDelay: "1s" }}
+                ></div>
+              </div>
             </Message>
-          );
-        })}
-        {isLoadingResponse && (
-          <Message isSender={false} shouldDisplayProfile={false} key={uuidv4()}>
-            <div className="flex gap-2">
-              <div className="w-2 aspect-square rounded-full bg-text-secondary animate-delayed-bounce"></div>
-              <div
-                className="w-2 aspect-square rounded-full bg-text-secondary animate-delayed-bounce"
-                style={{ animationDelay: "0.5s" }}
-              ></div>
-              <div
-                className="w-2 aspect-square rounded-full bg-text-secondary animate-delayed-bounce"
-                style={{ animationDelay: "1s" }}
-              ></div>
-            </div>
-          </Message>
-        )}
-      </ul>
+          )}
+        </ul>
+        <div ref={messagesEndRef} />
+      </div>
       <div className="p-2 pb-8 sm:pb-2 lg:rounded-b-md bg-base-tertiary">
         <form
           className="rounded-sm bg-base-primary flex items-stretch justify-between"
