@@ -1,24 +1,25 @@
-import { modelId, promptId } from "../utils/constants";
-import { useEffect, useState } from "react";
-
+/*import { modelId, promptId } from "../utils/constants";*/
+import { /*useEffect,*/ useState } from "react";
+/*
 import {
   createConversation,
   createResponse,
   getConversationItems,
 } from "../utils/openaiApi";
-
+*/
 import { Header } from "./Header";
 import { About } from "./About";
 import { ExperienceSection } from "./ExperienceSection";
 import { SkillSection } from "./SkillSection";
 import { ProjectSection } from "./ProjectSection";
 import { Footer } from "./Footer";
-import { ChatButton } from "./ChatButton";
-import { Chat } from "./Chat";
+//import { ChatButton } from "./ChatButton";
+//import { Chat } from "./Chat";
 
-type Role = "user" | "assistant";
+//type Role = "user" | "assistant";
 
 export const App = () => {
+  /*
   const [messageStack, setMessageStack] = useState<
     { role: Role; content: string }[]
   >([
@@ -28,12 +29,12 @@ export const App = () => {
         "Hello,\n\nWelcome to Anthony Lynn's portfolio site! I'm here to give career related information about Anthony in an easy accessible way. How can I help you?",
     },
   ]);
-
+  
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isChatEnabled, setIsChatEnabled] = useState(true);
   const [isLoadingResponse, setIsLoadingResponse] = useState(false);
   const [isPulseActive, setIsPulseActive] = useState(true);
-
+  */
   const [isDarkTheme, setIsDarkTheme] = useState(
     localStorage.theme === "dark" ||
       (!("theme" in localStorage) &&
@@ -44,7 +45,7 @@ export const App = () => {
     setIsDarkTheme(!isDarkTheme);
     localStorage.theme = isDarkTheme ? "light" : "dark";
   }
-
+  /*
   let conversationId = localStorage.conversationId;
 
   const addMessage = (role: Role, message: string) => {
@@ -148,7 +149,7 @@ export const App = () => {
         handleApiError(err);
       });
   }, []);
-
+  */
   return (
     <div
       className={`min-h-screen w-full flex flex-col items-center bg-base-secondary text-text-primary ${
@@ -162,7 +163,7 @@ export const App = () => {
         <SkillSection />
         <ProjectSection />
       </main>
-      <div className="sticky z-50 w-full bottom-0 p-0 flex justify-center">
+      {/*<div className="sticky z-50 w-full bottom-0 p-0 flex justify-center">
         {isModalOpen && (
           <Chat
             isLoadingResponse={isLoadingResponse}
@@ -179,7 +180,7 @@ export const App = () => {
             isPulseActive={isPulseActive}
           />
         )}
-      </div>
+      </div>*/}
       <Footer />
     </div>
   );
