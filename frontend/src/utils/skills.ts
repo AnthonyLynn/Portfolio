@@ -1,6 +1,6 @@
 import FigmaIcon from "../images/FigmaIcon.svg";
 import ReactIcon from "../images/ReactIcon.svg";
-import TypeScriptIcon from "../images/TypescriptIcon.svg";
+import TypeScriptIcon from "../images/TypeScriptIcon.svg";
 import TailwindIcon from "../images/TailwindIcon.svg";
 import GitHubSilhouetteIcon from "../images/GithubSilhouetteIcon.svg";
 import JiraIcon from "../images/JiraIcon.svg";
