@@ -70,7 +70,7 @@ export const Chat: React.FC<ChatProps> = ({
 
   return (
     <dialog
-      className={`fixed lg:absolute left-auto bottom-0 lg:bottom-4 lg:right-4 top-0 lg:top-auto w-full h-[100dvh] lg:h-auto lg:w-[380px] bg-base-primary flex flex-col text-text-primary lg:rounded-lg ${
+      className={`fixed lg:absolute left-auto bottom-0 lg:bottom-4 lg:right-4 top-0 lg:top-auto w-full h-dvh lg:h-auto lg:w-95 bg-base-primary flex flex-col text-text-primary lg:rounded-lg ${
         !isEnabled && "border-2 border-red-500"
       }`}
       open
@@ -90,7 +90,7 @@ export const Chat: React.FC<ChatProps> = ({
           <XIcon className="w-4 aspect-square fill-text-primary group-hover:fill-text-secondary" />
         </button>
       </div>
-      <div className="grow lg:h-[512px] overflow-y-scroll p-1 scrollbar mr-1">
+      <div className="grow lg:h-128 overflow-y-scroll p-1 scrollbar mr-1">
         <ul className="flex flex-col gap-2">
           {messageStack.map((message) => {
             const isSender = message.role === "user";
