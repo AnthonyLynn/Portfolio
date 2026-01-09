@@ -1,28 +1,25 @@
-import { config } from "dotenv";
 import express from "express";
+import cors from "cors";
+import { errors } from "celebrate";
+import helmet from "helmet";
 
-config();
+import routes from "./routes";
+import errorHandler from "./middlewares/error-handler";
+import { requestLogger, errorLogger } from "./middlewares/logger";
+import { env } from "./utils/constants";
 
-// import cors from "cors";
-// import { errors } from "celebrate";
-// import openai from "./routes/openai";
-// import helmet from "helmet";
-
-// import errorHandler from "./middlewares/error-handler";
-// import { requestLogger, errorLogger } from "./middlewares/logger";
-
-const { PORT = 3000 } = process.env;
+const { PORT = 3001 } = env;
 
 const app = express();
 
-//app.use(cors());
-// app.use(helmet());
-// app.use(express.json());
-// app.use(requestLogger);
-// app.use(openai);
-// app.use(errorLogger);
-// app.use(errors());
-// app.use(errorHandler);
+app.use(cors());
+app.use(helmet());
+app.use(express.json());
+app.use(requestLogger);
+app.use(routes);
+app.use(errorLogger);
+app.use(errors());
+app.use(errorHandler);
 
 app.listen(PORT, (err?: Error) => {
   if (err !== undefined) {

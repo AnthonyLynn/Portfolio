@@ -17,23 +17,23 @@ export const ExperienceSection: React.FC = () => {
   return (
     <section className="flex flex-col gap-8 sm:gap-2 text-base" id="experience">
       <button
-        className="flex relative z-10 w-full bg-base-tertiary rounded-md p-0.75 items-center text-sm leading-[20px] hover:cursor-pointer"
+        className="flex relative z-10 w-full bg-base-tertiary rounded-md p-0.75 items-center text-sm leading-5 hover:cursor-pointer"
         onClick={onExperienceToggle}
       >
         <div
           className={`absolute -z-10 w-[calc(50%-3px)] h-[calc(100%-6px)] rounded-sm bg-base-secondary ${
-            !showExperience && "right-[3px]"
+            !showExperience && "right-0.75"
           }`}
         ></div>
         <p
-          className={`w-[50%] relative top-[1px] ${
+          className={`w-[50%] relative top-px ${
             !showExperience && "text-text-secondary"
           }`}
         >
           Work
         </p>
         <p
-          className={`w-[50%] relative top-[1px] ${
+          className={`w-[50%] relative top-px ${
             showExperience && "text-text-secondary"
           }`}
         >

@@ -1,4 +1,4 @@
-import React, { FormEvent, useState, useEffect, useRef } from "react";
+import React, { type FormEvent, useState, useEffect, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 
 import { uuidv4 } from "../utils/idGenerator";

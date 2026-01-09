@@ -12,7 +12,7 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <header className="bg-base-primary/90 sticky z-20 left-0 top-0 w-full backdrop-blur-xs">
-      <div className="h-full md:max-w-[720px] w-full flex justify-between m-auto">
+      <div className="h-full md:max-w-180 w-full flex justify-between m-auto">
         <nav className="h-full text-dark-primary-text font-bold text-xs sm:text-sm flex">
           <a
             href="#about"

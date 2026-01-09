@@ -1,5 +1,5 @@
 import { transports, format } from "winston";
-import { logger } from "express-winston";
+import expressWinston from "express-winston";
 const { combine, timestamp, printf, json } = format;
 
 const messageFormat = combine(
@@ -7,7 +7,7 @@ const messageFormat = combine(
   printf(({ level, message, timestamp }) => `${timestamp} ${level}: ${message}`)
 );
 
-export const requestLogger = logger({
+export const requestLogger = expressWinston.logger({
   transports: [
     new transports.Console({
       format: messageFormat,
@@ -19,7 +19,7 @@ export const requestLogger = logger({
   ],
 });
 
-export const errorLogger = logger({
+export const errorLogger = expressWinston.errorLogger({
   transports: [new transports.File({ filename: "error.log" })],
   format: json(),
 });

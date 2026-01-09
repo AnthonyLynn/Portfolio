@@ -1,15 +1,10 @@
-import { NextFunction, Request, Response } from "express";
+import { Request, Response } from "express";
 
 interface CustomError extends Error {
   statusCode: number;
 }
 
-export default (
-  err: CustomError,
-  _: Request,
-  res: Response,
-  __: NextFunction
-) => {
+export default (err: CustomError, _: Request, res: Response) => {
   console.error(err);
   const { statusCode = 500, message } = err;
 

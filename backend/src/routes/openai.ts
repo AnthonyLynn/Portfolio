@@ -9,7 +9,8 @@ import { Router } from "express";
 const router = Router();
 
 router.post("/conversation", createConversation);
+router.get("/conversation", validateId, getConversationItems);
+
 router.post("/response", validateResponse, createResponse);
-router.get("/conversation/:conversationId", validateId, getConversationItems);
 
 export default router;

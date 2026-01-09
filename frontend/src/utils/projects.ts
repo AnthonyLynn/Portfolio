@@ -21,7 +21,7 @@ export const projects: Project[] = [
     description:
       "Interactive educational application that teaches young users about sharks and their habitats.",
     skills: ["React", "TypeScript", "Vitest", "Storybook"],
-    websiteLink: "https://d2iglzmdn49e7r.cloudfront.net",
+    websiteLink: "https://d2ar1l3x08s5gx.cloudfront.net",
   },
   {
     image: NewsAppScreenshot,

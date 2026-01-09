@@ -1,12 +1,22 @@
 import express, { Request, NextFunction } from "express";
-import { modelId, promptId, apiUrl } from "../utils/constants";
+import { modelId, promptId, apiUrl, env } from "../utils/constants";
 
-const { VITE_OPENAI_API } = process.env;
+const { VITE_OPENAI_API } = env;
 
 function getResult(res: Response) {
   if (res.ok) {
     return res.json();
   }
+
+  res
+    .json()
+    .then((data) => {
+      console.error(data);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+
   return Promise.reject(`Error: ${res.status}`);
 }
 
@@ -25,7 +35,6 @@ export function createConversation(
   request(`${apiUrl}/conversations`, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
       authorization: `Bearer ${VITE_OPENAI_API}`,
     },
   })
@@ -49,7 +58,9 @@ export function createResponse(
     },
     body: JSON.stringify({
       model: modelId,
-      prompt: promptId,
+      prompt: {
+        id: promptId,
+      },
       conversation: id,
       input: input,
     }),
@@ -63,7 +74,7 @@ export function getConversationItems(
   res: express.Response,
   next: NextFunction
 ) {
-  const id = req.params.conversationId;
+  const id = req.query.conversationId;
 
   request(`${apiUrl}/conversations/${id}/items?order=asc`, {
     method: "GET",

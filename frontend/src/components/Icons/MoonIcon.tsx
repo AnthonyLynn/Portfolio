@@ -1,4 +1,4 @@
-import { IconProps } from "./Icon";
+import { type IconProps } from "./Icon";
 
 export const MoonIcon: React.FC<IconProps> = ({ className }) => {
   return (

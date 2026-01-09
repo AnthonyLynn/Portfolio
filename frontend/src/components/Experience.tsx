@@ -27,7 +27,7 @@ export const Experience: React.FC<ExperienceProps> = ({
       <img
         src={institutionLogo}
         alt="Institution Logo"
-        className="absolute top-[-26px] sm:static aspect-square rounded-full w-12 border border-base-tertiary stroke-out box-content"
+        className="absolute -top-6.5 sm:static aspect-square rounded-full w-12 border border-base-tertiary stroke-out box-content"
       />
       <div className="flex flex-col gap-2 items-center sm:items-start">
         <div className="flex flex-col gap-2 sm:gap-0 items-center sm:items-start">

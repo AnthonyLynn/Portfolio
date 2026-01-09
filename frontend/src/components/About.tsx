@@ -75,7 +75,7 @@ export const About: React.FC = () => {
       <img
         src={ProfilePicture}
         alt="Profile Picture"
-        className="rounded-full sm:rounded-md w-[75px] sm:w-auto aspect-square sm:aspect-auto object-cover"
+        className="rounded-full sm:rounded-md w-18.75 sm:w-auto aspect-square sm:aspect-auto object-cover"
       />
     </section>
   );

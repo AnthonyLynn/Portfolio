@@ -1,4 +1,4 @@
-import { IconProps } from "./Icon";
+import { type IconProps } from "./Icon";
 
 export const FileDownloadIcon: React.FC<IconProps> = ({ className }) => {
   return (

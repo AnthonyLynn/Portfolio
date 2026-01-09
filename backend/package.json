@@ -4,13 +4,13 @@
   "description": "Backend for personal portfolio project",
   "license": "ISC",
   "author": "Anthony Lynn",
-  "type": "commonjs",
+  "type": "module",
   "main": "./src/app.ts",
   "homepage": "https://anthony-lynn.com",
   "scripts": {
     "lint": "eslint ./src",
     "build": "tsc --build",
-    "dev": "nodemon ./src/app.ts"
+    "dev": "tsx watch ./src/app.ts"
   },
   "dependencies": {
     "celebrate": "^15.0.3",
@@ -24,7 +24,6 @@
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
-    "nodemon": "^3.1.11",
-    "ts-node": "^10.9.2"
+    "tsx": "^4.21.0"
   }
 }

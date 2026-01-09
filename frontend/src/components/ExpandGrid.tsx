@@ -1,4 +1,4 @@
-import React, { Children, ReactNode, useState, useEffect } from "react";
+import React, { Children, type ReactNode, useState, useEffect } from "react";
 
 interface ExpandGridProps {
   children: ReactNode;
