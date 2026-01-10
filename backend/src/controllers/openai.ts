@@ -3,7 +3,7 @@ import { modelId, promptId, apiUrl, env } from "../utils/constants";
 
 const { VITE_OPENAI_API } = env;
 
-function getResult(res: Response) {
+function getResult(res: Response): Promise<unknown> | Promise<never> {
   if (res.ok) {
     return res.json();
   }
