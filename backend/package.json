@@ -8,8 +8,8 @@
   "main": "./src/app.ts",
   "homepage": "https://anthony-lynn.com",
   "scripts": {
-    "lint": "eslint ./src",
-    "build": "tsc --build",
+    "lint": "eslint .",
+    "build": "tsc -b",
     "dev": "tsx watch ./src/app.ts"
   },
   "dependencies": {

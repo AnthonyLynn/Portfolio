@@ -19,7 +19,7 @@ interface ChatProps {
   messageStack: { role: Role; content: string }[];
   isLoadingResponse: boolean;
   isEnabled: boolean;
-  onMessageSent: ({}: FromValues) => void;
+  onMessageSent: ({ message }: FromValues) => void;
   onModalClose: () => void;
 }
 
