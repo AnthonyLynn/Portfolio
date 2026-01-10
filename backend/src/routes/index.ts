@@ -1,6 +1,6 @@
-import NotFoundError from "../errors/not-found-err";
+import NotFoundError from "../errors/not-found-err.ts";
 
-import openaiRouter from "./openai";
+import openaiRouter from "./openai.ts";
 import { type NextFunction, Router } from "express";
 
 const router = Router();

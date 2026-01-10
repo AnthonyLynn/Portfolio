@@ -2,8 +2,8 @@ import {
   getConversationItems,
   createConversation,
   createResponse,
-} from "../controllers/openai";
-import { validateId, validateResponse } from "../middlewares/validation";
+} from "../controllers/openai.ts";
+import { validateId, validateResponse } from "../middlewares/validation.ts";
 import { Router } from "express";
 
 const router = Router();

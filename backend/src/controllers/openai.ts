@@ -1,5 +1,5 @@
 import express, { Request, NextFunction } from "express";
-import { modelId, promptId, apiUrl, env } from "../utils/constants";
+import { modelId, promptId, apiUrl, env } from "../utils/constants.ts";
 
 const { VITE_OPENAI_API } = env;
 

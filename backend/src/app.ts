@@ -3,10 +3,10 @@ import cors from "cors";
 import { errors } from "celebrate";
 import helmet from "helmet";
 
-import routes from "./routes";
-import errorHandler from "./middlewares/error-handler";
-import { requestLogger, errorLogger } from "./middlewares/logger";
-import { env } from "./utils/constants";
+import routes from "./routes/index.ts";
+import errorHandler from "./middlewares/error-handler.ts";
+import { requestLogger, errorLogger } from "./middlewares/logger.ts";
+import { env } from "./utils/constants.ts";
 
 const { PORT = 3001 } = env;
 
