@@ -13,7 +13,6 @@
     "dev": "tsx watch ./src/app.ts"
   },
   "dependencies": {
-    "@types/express-serve-static-core": "^5.1.0",
     "celebrate": "^15.0.3",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",

@@ -29,9 +29,6 @@ importers:
 
   backend:
     dependencies:
-      '@types/express-serve-static-core':
-        specifier: ^5.1.0
-        version: 5.1.0
       celebrate:
         specifier: ^15.0.3
         version: 15.0.3
