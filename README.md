@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+[anthony-lynn.com](https://anthony-lynn.com)
 
-## Getting Started
+# Portfolio
 
-First, run the development server:
+### Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Intro
+- Technologies
+- Figma
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Intro**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+A portfolio website made by Anthony Lynn. Displays latest projects and an openai chat bot recruiters can ask questions to.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Please contact me or open an issue if you have any feedback, thank you!
 
-## Learn More
+**Technologies**
 
-To learn more about Next.js, take a look at the following resources:
+The websites design was planned in Figma, featuring a laptop, tablet, and mobile resolutions; figma design also includes theme colors.
+While initially built with Vite, it's now made with Next.js to handle frontend and backend seamlessly.
+It includes React.js as it's front-end framework and TypeScript for quality code with strict typechecking.
+Routing and 3rd party API calls to OpenAI's API is handled through Next.js.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Figma**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[Figma](https://www.figma.com/design/HbmlolwhIynFvsESqIldOp/Portfolio?node-id=0-1&t=zMYc6xmZPaKuxn1O-1)

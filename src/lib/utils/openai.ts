@@ -21,9 +21,6 @@ export function createResponse(
   conversationId: string,
   input: string
 ): Promise<OpenAI.Responses.Response> {
-  console.log(conversationId);
-  console.log(input);
-
   return request(`/openai/responses`, {
     method: "POST",
     headers: {
