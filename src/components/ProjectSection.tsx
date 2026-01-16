@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { uuidv4 } from "../lib/utils/idGenerator";
 

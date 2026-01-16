@@ -35,6 +35,8 @@ export const Project: React.FC<ProjectProps> = ({
         <Image
           src={image}
           alt={title}
+          width={590}
+          height={354}
           className="object-cover w-full aspect-5/3 rounded-sm"
         />
       </a>

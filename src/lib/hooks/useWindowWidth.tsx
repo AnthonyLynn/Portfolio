@@ -1,9 +1,10 @@
 // Referenced from: https://medium.com/@sifatullahsu/how-to-track-window-width-in-react-with-a-custom-hook-7bcee7cbcd4b
+"use client";
 
 import { useEffect, useState } from "react";
 
 const useWindowWidth = (): number => {
-  const [width, setWidth] = useState<number>(window.innerWidth);
+  const [width, setWidth] = useState<number>(0);
 
   useEffect(() => {
     const onScreenResize = () => {

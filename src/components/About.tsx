@@ -72,6 +72,8 @@ export const About: React.FC = () => {
       <Image
         src="/images/ProfilePicture.png"
         alt="Profile Picture"
+        width="127"
+        height="150"
         className="rounded-full sm:rounded-md w-18.75 sm:w-auto aspect-square sm:aspect-auto object-cover"
       />
     </section>

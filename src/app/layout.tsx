@@ -24,9 +24,11 @@ export default function RootLayout({
           defaultTheme="system"
           themes={["light", "dark"]}
         >
-          <Header />
-          {children}
-          <Footer />
+          <div className="min-h-screen w-full flex flex-col items-center bg-base-secondary text-text-primary">
+            <Header />
+            {children}
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

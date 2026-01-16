@@ -1,28 +1,3 @@
-import FigmaIcon from "../images/FigmaIcon.svg";
-import ReactIcon from "../images/ReactIcon.svg";
-import TypeScriptIcon from "../images/TypeScriptIcon.svg";
-import TailwindIcon from "../images/TailwindIcon.svg";
-import GitHubSilhouetteIcon from "../images/GithubSilhouetteIcon.svg";
-import JiraIcon from "../images/JiraIcon.svg";
-import HTML5Icon from "../images/HTML5Icon.svg";
-import CSS3Icon from "../images/CSS3Icon.svg";
-import JavaScriptIcon from "../images/JavaScriptIcon.svg";
-import JestIcon from "../images/JestIcon.svg";
-import NodeIcon from "../images/NodeIcon.svg";
-import StorybookIcon from "../images/StorybookIcon.svg";
-import VitestIcon from "../images/VitestIcon.svg";
-import ViteIcon from "../images/ViteIcon.svg";
-import WebpackIcon from "../images/WebpackIcon.svg";
-import PhotoshopIcon from "../images/PhotoshopIcon.svg";
-import IllustratorIcon from "../images/IllustratorIcon.svg";
-import LuaIcon from "../images/LuaIcon.svg";
-import GodotIcon from "../images/GodotIcon.svg";
-import UnityIcon from "../images/UnityIcon.svg";
-import UnrealIcon from "../images/UnrealIcon.svg";
-import TrelloIcon from "../images/TrelloIcon.svg";
-import LuauIcon from "../images/LuauIcon.svg";
-import RobloxStudioIcon from "../images/RobloxStudioIcon.svg";
-
 interface Skill {
   name: string;
   logo: string;
@@ -32,122 +7,122 @@ interface Skill {
 export const skills: Skill[] = [
   {
     name: "Figma",
-    logo: FigmaIcon,
+    logo: "/images/FigmaIcon.svg",
     description: "Design Tool",
   },
   {
     name: "React",
-    logo: ReactIcon,
+    logo: "/images/ReactIcon.svg",
     description: "JavaScript UI Library",
   },
   {
     name: "TypeScript",
-    logo: TypeScriptIcon,
+    logo: "/images/TypeScriptIcon.svg",
     description: "Typed JavaScript",
   },
   {
     name: "Tailwind",
-    logo: TailwindIcon,
+    logo: "/images/TailwindIcon.svg",
     description: "CSS Framework",
   },
   {
     name: "GitHub",
-    logo: GitHubSilhouetteIcon,
+    logo: "/images/GithubSilhouetteIcon.svg",
     description: "Development Platform",
   },
   {
     name: "Jira",
-    logo: JiraIcon,
+    logo: "/images/JiraIcon.svg",
     description: "Task Manager",
   },
   {
     name: "Trello",
-    logo: TrelloIcon,
+    logo: "/images/TrelloIcon.svg",
     description: "Task Manager",
   },
   {
     name: "HTML5",
-    logo: HTML5Icon,
+    logo: "/images/HTML5Icon.svg",
     description: "Markup Language",
   },
   {
     name: "CSS3",
-    logo: CSS3Icon,
+    logo: "/images/CSS3Icon.svg",
     description: "Stylesheet Language",
   },
   {
     name: "JavaScript",
-    logo: JavaScriptIcon,
+    logo: "/images/JavaScriptIcon.svg",
     description: "Programming Language",
   },
   {
     name: "Jest",
-    logo: JestIcon,
+    logo: "/images/JestIcon.svg",
     description: "Testing Framework",
   },
   {
     name: "Node.js",
-    logo: NodeIcon,
+    logo: "/images/NodeIcon.svg",
     description: "Runtime Environment",
   },
   {
     name: "Storybook.js",
-    logo: StorybookIcon,
+    logo: "/images/StorybookIcon.svg",
     description: "UI Workshop",
   },
   {
     name: "Vitest",
-    logo: VitestIcon,
+    logo: "/images/VitestIcon.svg",
     description: "Vite Test Framework",
   },
   {
     name: "Vite",
-    logo: ViteIcon,
+    logo: "/images/ViteIcon.svg",
     description: "Fast Build Tool",
   },
   {
     name: "Webpack",
-    logo: WebpackIcon,
+    logo: "/images/WebpackIcon.svg",
     description: "Static Module Bundler",
   },
   {
     name: "Photoshop",
-    logo: PhotoshopIcon,
+    logo: "/images/PhotoshopIcon.svg",
     description: "Image Editor",
   },
   {
     name: "Illustrator",
-    logo: IllustratorIcon,
+    logo: "/images/IllustratorIcon.svg",
     description: "Vector Editor",
   },
   {
     name: "Lua",
-    logo: LuaIcon,
+    logo: "/images/LuaIcon.svg",
     description: "Scripting Language",
   },
   {
     name: "Luau",
-    logo: LuauIcon,
+    logo: "/images/LuauIcon.svg",
     description: "Scripting Language",
   },
   {
     name: "Roblox",
-    logo: RobloxStudioIcon,
+    logo: "/images/RobloxStudioIcon.svg",
     description: "Game Engine",
   },
   {
     name: "Godot",
-    logo: GodotIcon,
+    logo: "/images/GodotIcon.svg",
     description: "Game Engine",
   },
   {
     name: "Unity",
-    logo: UnityIcon,
+    logo: "/images/UnityIcon.svg",
     description: "Game Engine",
   },
   {
     name: "Unreal",
-    logo: UnrealIcon,
+    logo: "/images/UnrealIcon.svg",
     description: "Game Engine",
   },
 ];

@@ -40,7 +40,7 @@ export const ExperienceSection: React.FC = () => {
         {showExperience ? (
           <>
             <Experience
-              institutionLogo={"../../public/images/FreelanceLogo.png"}
+              institutionLogo={"/images/FreelanceLogo.svg"}
               beginDate={"Jan 2020"}
               endDate={"Present"}
               companyName={"Freelance"}
@@ -53,9 +53,7 @@ export const ExperienceSection: React.FC = () => {
               externalLinks={[]}
             />
             <Experience
-              institutionLogo={
-                "../../public/images/AquariumReptileDenCompanyLogo.png"
-              }
+              institutionLogo={"/images/AquariumReptileDenCompanyLogo.png"}
               beginDate={"Jun 2025"}
               endDate={"Aug 2025"}
               companyName={"Electric City Aquarium & Reptile Den"}
@@ -73,7 +71,7 @@ export const ExperienceSection: React.FC = () => {
               ]}
             />
             <Experience
-              institutionLogo={"../../public/images/ColdStoneCreameryLogo.png"}
+              institutionLogo={"/images/ColdStoneCreameryLogo.png"}
               beginDate={"May 2021"}
               endDate={"Current"}
               companyName={"ColdStone Creamery"}
@@ -89,7 +87,7 @@ export const ExperienceSection: React.FC = () => {
         ) : (
           <>
             <Experience
-              institutionLogo={"../../public/images/TripleTenLogo.png"}
+              institutionLogo={"/images/TripleTenCompanyLogo.png"}
               beginDate={"2024"}
               endDate={"2025"}
               companyName={"TripleTen"}
@@ -101,9 +99,7 @@ export const ExperienceSection: React.FC = () => {
               externalLinks={[]}
             />
             <Experience
-              institutionLogo={
-                "../../public/images/AcademyOfArtUniversityLogo.png"
-              }
+              institutionLogo={"/images/AcademyOfArtUniversityLogo.png"}
               beginDate={"2021"}
               endDate={"2024"}
               companyName={"Academy of Art University"}

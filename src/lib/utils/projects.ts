@@ -10,7 +10,7 @@ interface Project {
 
 export const projects: Project[] = [
   {
-    image: "../../../public/images/MakeASharkScreenshot.jpg",
+    image: "/images/MakeASharkScreenshot.jpg",
     title: "Make a Shark",
     description:
       "Interactive educational application that teaches young users about sharks and their habitats.",
@@ -18,7 +18,7 @@ export const projects: Project[] = [
     websiteLink: "https://d2ar1l3x08s5gx.cloudfront.net",
   },
   {
-    image: "../../../public/images/NewsAppScreenshot.png",
+    image: "/images/NewsAppScreenshot.png",
     title: "News Explorer",
     description:
       "Website allowing users to find an endless amount of current news articles using user entered keywords. Additionally allows for the saving of these articles for later reading.",
@@ -28,7 +28,7 @@ export const projects: Project[] = [
     gitHubLink: "https://github.com/AnthonyLynn/NewsApp",
   },
   {
-    image: "../../../public/images/LoverCodeJamzScreenshot.jpg",
+    image: "/images/LoverCodeJamzScreenshot.jpg",
     title: "Lovers Code Jamz",
     description:
       "Website for planning the perfect date made for a 5 day team competition. Developed the restaurant carousel listing top 100 restaurants in the US, ordered by distance form user. Won 1st in design, presentation, and technical execution.",
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     gitHubLink: "https://github.com/JMIK-THANG/Lover-s-Slow-Jamz",
   },
   {
-    image: "../../../public/images/ReactionRunawayScreenshot.png",
+    image: "/images/ReactionRunawayScreenshot.png",
     title: "Reaction Runaway",
     description:
       "Game made in a 3.5 day game jam for the 2023 Roblox Developer Challenge. Features a user controlled player that can shoot electricity to solve puzzles.",
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     demoLink: "https://youtu.be/jt19Wdh4IlE",
   },
   {
-    image: "../../../public/images/SpellCodingScreenshot.png",
+    image: "/images/SpellCodingScreenshot.png",
     title: "Spell Coding",
     description:
       "Commission project showcasing 25 different spells from the Harry Potter Series. Made UI functional, projectiles and their functional effects, and other small things like the hit cursor.",
