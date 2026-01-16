@@ -33,7 +33,8 @@
     "src/components/Project.tsx",
     "src/components/ProjectSection.tsx",
     "src/components/Skill.tsx",
-    "src/components/SkillSection.tsx"
+    "src/components/SkillSection.tsx",
+    "src/components/ThemeButton.tsx.lazy"
   ],
   "exclude": ["node_modules"]
 }

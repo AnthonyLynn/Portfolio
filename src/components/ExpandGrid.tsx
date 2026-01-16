@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Children, type ReactNode, useState, useEffect } from "react";
+import React, { Children, type ReactNode, useState } from "react";
 
 interface ExpandGridProps {
   children: ReactNode;
@@ -13,7 +13,7 @@ export const ExpandGrid: React.FC<ExpandGridProps> = ({
   children,
   rowAmount,
   initialRowsShown,
-  viewMoreAmount,
+  viewMoreAmount = 1,
 }) => {
   const childrenArray = Children.toArray(children);
 
@@ -21,33 +21,19 @@ export const ExpandGrid: React.FC<ExpandGridProps> = ({
     rowAmount * initialRowsShown
   );
 
-  const [canShowMore, setCanShowMore] = useState(
-    amountOfElementsShown < childrenArray.length
-  );
-
-  function updateShowMoreButton() {
-    setCanShowMore(amountOfElementsShown < childrenArray.length);
-  }
+  const canShowMore = amountOfElementsShown < childrenArray.length;
 
   function onShowMore() {
     setAmountOfElementsShown(
-      amountOfElementsShown + rowAmount * (viewMoreAmount || 1)
+      amountOfElementsShown + rowAmount * viewMoreAmount
     );
-    updateShowMoreButton();
   }
 
-  useEffect(() => {
-    updateShowMoreButton();
-  }, [amountOfElementsShown]);
-
-  useEffect(() => {
-    if (amountOfElementsShown % rowAmount !== 0) {
-      setAmountOfElementsShown(
-        amountOfElementsShown +
-          (rowAmount - (amountOfElementsShown % rowAmount))
-      );
-    }
-  }, [rowAmount]);
+  if (amountOfElementsShown % rowAmount !== 0) {
+    setAmountOfElementsShown(
+      amountOfElementsShown + (rowAmount - (amountOfElementsShown % rowAmount))
+    );
+  }
 
   const gridCols: { [key: number]: string } = {
     1: "grid-cols-1",

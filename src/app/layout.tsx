@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "../components/ThemeProvider";
 import { Header } from "@/src/components/Header";
 import { Footer } from "@/src/components/Footer";
+import { ChatBot } from "../components/ChatBot";
 
 export const metadata: Metadata = {
   title: "Anthony Lynn",
@@ -27,6 +28,7 @@ export default function RootLayout({
           <div className="min-h-screen w-full flex flex-col items-center bg-base-secondary text-text-primary">
             <Header />
             {children}
+            <ChatBot />
             <Footer />
           </div>
         </ThemeProvider>
