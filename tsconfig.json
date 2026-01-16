@@ -28,7 +28,12 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "src/components/Message.tsx",
+    "src/components/Project.tsx",
+    "src/components/ProjectSection.tsx",
+    "src/components/Skill.tsx",
+    "src/components/SkillSection.tsx"
   ],
   "exclude": ["node_modules"]
 }
